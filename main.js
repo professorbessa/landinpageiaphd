@@ -56,20 +56,41 @@
     }
   }
 
-  function messageFor(data) {
-    var imersao = root.dataset.oferta === "imersao-0512";
-    var perfil = root.dataset.perfil === "empresario" ? "empresário" : "profissional";
-    var pedido = imersao
-      ? "Quero participar da Imersão especializada de 5 de dezembro de 2026."
-      : root.dataset.perfil === "empresario"
+  function offerCopy() {
+    var oferta = root.dataset.oferta || "";
+    if (oferta === "imersao-0512") {
+      return {
+        origem: "Olá, IA PhD. Cheguei pela página da Imersão de 5 de dezembro.",
+        pedido: "Quero participar da Imersão especializada de 5 de dezembro de 2026."
+      };
+    }
+    if (oferta === "immersion") {
+      return {
+        origem: "Olá, IA PhD. Cheguei pela página da Immersion.",
+        pedido: "Quero conhecer a Immersion."
+      };
+    }
+    if (oferta === "practitioner") {
+      return {
+        origem: "Olá, IA PhD. Cheguei pela página do Agentic Practitioner.",
+        pedido: "Quero conhecer o Agentic Practitioner."
+      };
+    }
+    return {
+      origem: "Olá, IA PhD. Cheguei pela landing da Era Agêntica.",
+      pedido: root.dataset.perfil === "empresario"
         ? "Quero um diagnóstico ou uma conversa estratégica."
-        : "Quero ampliar minhas capacidades e inscrever meu interesse na Imersão.";
+        : "Quero ampliar minhas capacidades e inscrever meu interesse na Imersão."
+    };
+  }
+
+  function messageFor(data) {
+    var copy = offerCopy();
+    var perfil = root.dataset.perfil === "empresario" ? "empresário" : "profissional";
     var lines = [
-      imersao
-        ? "Olá, IA PhD. Cheguei pela página da Imersão de 5 de dezembro."
-        : "Olá, IA PhD. Cheguei pela landing da Era Agêntica.",
+      copy.origem,
       "Perfil: " + perfil + ".",
-      pedido,
+      copy.pedido,
       "Nome: " + data.nome,
       "E-mail: " + data.email,
       "WhatsApp: " + data.telefone
