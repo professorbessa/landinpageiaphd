@@ -570,6 +570,33 @@ h2 {
   height: auto;
 }
 
+.folder .choice-scene { margin-top: 28px; }
+
+.folder .choice-scene figcaption {
+  padding-top: 10px;
+  color: var(--muted-light);
+  font-size: 0.95rem;
+}
+
+.room-film {
+  margin: 28px 0 0;
+  max-width: 960px;
+}
+
+.room-film video {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 18px;
+  background: #111;
+}
+
+.room-film figcaption {
+  margin-top: 10px;
+  color: var(--muted-light);
+  font-size: 0.95rem;
+}
+
 html[data-imersao-bar="on"] .choice-scene { scroll-margin-top: calc(var(--header) + 60px); }
 
 .choice-note {
@@ -1618,4 +1645,24 @@ details p {
   .dim,
   .dim-example,
   .gains li { animation: none; }
+}
+
+@media print {
+  .folder .header,
+  .folder .skip,
+  .folder form,
+  .folder .btn { display: none !important; }
+  .folder .hero,
+  .folder .band-dark,
+  .folder .footer {
+    background: #fff !important;
+    color: #171717 !important;
+  }
+  .folder .kicker,
+  .folder .lead,
+  .folder .fine,
+  .folder .signature,
+  .folder .e4,
+  .folder .gains p,
+  .folder .level-num { color: #171717 !important; }
 }

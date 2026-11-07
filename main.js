@@ -66,6 +66,12 @@
         pedido: "Quero participar da Imersão presencial de Maceió, em 5 de dezembro de 2026."
       };
     }
+    if (oferta === "para-a-empresa") {
+      return {
+        origem: "Olá, IA PhD. Cheguei pela página para apresentar a Imersão ao dono da empresa.",
+        pedido: "Quero confirmar o investimento da Imersão presencial de Maceió, em 5 de dezembro de 2026."
+      };
+    }
     if (oferta === "immersion") {
       return {
         origem: "Olá, IA PhD. Cheguei pela página da Immersion.",
@@ -88,15 +94,18 @@
 
   function messageFor(data) {
     var copy = offerCopy();
-    var perfil = root.dataset.perfil === "empresario" ? "empresário" : "profissional";
-    var lines = [
-      copy.origem,
-      "Perfil: " + perfil + ".",
+    var lines = [copy.origem];
+    if (root.dataset.oferta !== "para-a-empresa") {
+      var perfil = root.dataset.perfil === "empresario" ? "empresário" : "profissional";
+      lines.push("Perfil: " + perfil + ".");
+    }
+    lines.push(
       copy.pedido,
       "Nome: " + data.nome,
       "E-mail: " + data.email,
       "WhatsApp: " + data.telefone
-    ];
+    );
+    if (data.quantidade) lines.push("Quantidade de profissionais: " + data.quantidade);
     if (data.organizacao) lines.push("Organização: " + data.organizacao);
     if (data.funcao) lines.push("Função a estruturar: " + data.funcao);
     return lines.join("\n");
@@ -127,7 +136,8 @@
       email: email,
       telefone: telefone,
       organizacao: form.organizacao.value.trim(),
-      funcao: form.funcao.value.trim()
+      funcao: form.funcao.value.trim(),
+      quantidade: form.quantidade ? form.quantidade.value.trim() : ""
     });
 
     if (!WHATSAPP) {
