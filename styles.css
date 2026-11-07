@@ -574,7 +574,8 @@ html[data-imersao-bar="on"] .choice-scene { scroll-margin-top: calc(var(--header
 
 .choice-note {
   max-width: 68ch;
-  margin-top: 22px;
+  margin: 22px auto 0;
+  text-align: center;
 }
 
 .choice-note-title {
