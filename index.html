@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-perfil="profissional" data-campanha="false">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IA PhD — O futuro do trabalho é Humano + Agêntico</title>
+  <meta name="description" content="Duas jornadas de transformação para a Era dos Funcionários Agênticos. Profissionais evoluem até uma Chief of Staff Agêntica. Empresários evoluem para uma Organização Agêntica.">
+  <meta name="theme-color" content="#171717">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    (function () {
+      var raw = (new URLSearchParams(location.search).get("perfil") || "")
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "");
+      var empresarial = raw === "empresario" || raw === "empresa";
+      var campanha = raw === "profissional" || empresarial;
+      var perfil = empresarial ? "empresario" : "profissional";
+      document.documentElement.dataset.perfil = perfil;
+      document.documentElement.dataset.campanha = campanha ? "true" : "false";
+      if (campanha) {
+        document.title = empresarial
+          ? "IA PhD — Para empresários"
+          : "IA PhD — Para profissionais";
+      }
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip" href="#conteudo">Ir para o conteúdo</a>
+
+  <header class="header">
+    <div class="container header-inner">
+      <a class="brand" href="./" aria-label="IA PhD, início">
+        <svg class="mark" viewBox="0 0 140.4 140.4" aria-hidden="true">
+          <rect x="0" y="90" width="50.4" height="50.4" rx="12.6" fill="#F2EEE6"/>
+          <rect x="45" y="45" width="50.4" height="50.4" rx="12.6" fill="#F2EEE6"/>
+          <rect x="90" y="0" width="50.4" height="50.4" rx="12.6" fill="#F0783C"/>
+        </svg>
+        <span class="brand-text">
+          <span class="wordmark"><span class="ia">ia</span><span class="phd">PhD</span></span>
+          <span class="brand-sig">Engenhando a Nova Arquitetura do Trabalho</span>
+        </span>
+      </a>
+      <a class="btn btn-ghost header-cta" href="#conversa">
+        <span class="cta-full">Fale com a IA PhD</span>
+        <span class="cta-short">Conversar</span>
+      </a>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero">
+      <div class="hero-art" aria-hidden="true">
+        <span class="sq sq-orange"></span>
+        <span class="sq sq-paper"></span>
+        <span class="sq sq-ink"></span>
+      </div>
+      <div class="container hero-inner">
+        <p class="kicker kicker-on-dark">
+          <span class="escolha">01 / A grande transformação</span>
+          <span class="campanha pro">Para profissionais</span>
+          <span class="campanha biz">Para empresários</span>
+        </p>
+
+        <h1 class="display">
+          <span class="escolha">O futuro do trabalho<br>não será apenas humano.<br>Será Humano + <span class="accent">Agêntico.</span></span>
+          <span class="campanha pro">Amplie a sua capacidade de trabalho.<br>Até a sua <span class="accent">Chief of Staff Agêntica.</span></span>
+          <span class="campanha biz">Amplie a capacidade do seu negócio.<br>Até uma <span class="accent">Organização Agêntica.</span></span>
+        </h1>
+
+        <p class="lead">
+          <span class="escolha">Não basta adotar IA. É hora de engenhar uma nova arquitetura de trabalho, incorporando Funcionários Agênticos às capacidades de profissionais e empresas.</span>
+          <span class="campanha pro">Aprenda a preparar, criar, parametrizar, treinar, delegar e supervisionar Funcionários Agênticos. A jornada evolui com você, até a sua própria Chief of Staff Agêntica.</span>
+          <span class="campanha biz">Incorpore Funcionários Agênticos ao negócio, transforme a arquitetura do trabalho e evolua pessoas, processos e governança como um único sistema.</span>
+        </p>
+
+        <div class="horizon">
+          <p class="horizon-now">
+            <span class="horizon-kicker">Presente do trabalho</span>
+            Inserir chats de IA e bots no trabalho que já existe.
+          </p>
+          <article class="belief">
+            <svg class="belief-mark" viewBox="0 0 140.4 140.4" aria-hidden="true">
+              <rect x="0" y="90" width="50.4" height="50.4" rx="12.6" fill="#171717"/>
+              <rect x="45" y="45" width="50.4" height="50.4" rx="12.6" fill="#171717"/>
+              <rect x="90" y="0" width="50.4" height="50.4" rx="12.6" fill="#F0783C"/>
+            </svg>
+            <div>
+              <p class="belief-kicker">Nossa convicção</p>
+              <p class="belief-title">Acreditamos nesta forma de trabalhar.</p>
+              <ol class="levels">
+                <li>
+                  <span class="level-num">01</span>
+                  <p>Profissional humano + Funcionários Agênticos.</p>
+                </li>
+                <li>
+                  <span class="level-num">02</span>
+                  <p>Departamentos, fluxos e Organizações Agênticas.</p>
+                </li>
+              </ol>
+              <p class="belief-sign">Engenhando a Nova Arquitetura do Trabalho.</p>
+            </div>
+          </article>
+        </div>
+
+        <p class="ask">Qual transformação você deseja realizar?</p>
+
+        <div class="choices">
+          <a class="choice" href="?perfil=profissional" data-perfil="profissional">
+            <span class="choice-index">01 / Nível 01</span>
+            <span class="choice-title">Sou Profissional</span>
+            <span class="choice-text">Profissional humano + Funcionários Agênticos.</span>
+          </a>
+          <a class="choice" href="?perfil=empresario" data-perfil="empresario">
+            <span class="choice-index">02 / Nível 02</span>
+            <span class="choice-title">Sou Empresário</span>
+            <span class="choice-text">Departamentos, fluxos e Organizações Agênticas.</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="band band-paper" id="dimensoes" aria-labelledby="titulo-dimensoes">
+      <div class="container">
+        <p class="index">02 / Capacidades</p>
+        <h2 id="titulo-dimensoes">Amplie suas capacidades. Transforme sua forma de trabalhar.</h2>
+        <p class="body body-intro">Descubra como incorporar Funcionários Agênticos pode ampliar oito dimensões fundamentais da sua capacidade de trabalho e geração de valor.</p>
+        <div class="dims">
+          <details class="dim" name="dimensoes" open style="--dim:#F0783C; --glyph:#171717">
+            <summary>
+              <span class="dim-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><rect x="4" y="18" width="10" height="10" rx="2.5"/><rect x="12" y="10" width="10" height="10" rx="2.5"/><rect x="20" y="4" width="8" height="8" rx="2"/></svg></span>
+              <span class="dim-copy"><span class="dim-name">Cognitiva</span><span class="dim-line">Ampliar análise, compreensão e raciocínio.</span></span>
+              <span class="dim-more"></span>
+            </summary>
+            <p class="dim-example"><span class="pro">Uma Funcionária Agêntica reúne o contexto, compara leituras e devolve uma análise para você decidir.</span><span class="biz">A liderança recebe sínteses da operação, de contratos ou do mercado para decidir com mais contexto.</span></p>
+          </details>
+          <details class="dim" name="dimensoes" style="--dim:#171717; --glyph:#F2EEE6">
+            <summary>
+              <span class="dim-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><rect x="6" y="6" width="20" height="4.5" rx="1.5"/><rect x="6" y="13.75" width="20" height="4.5" rx="1.5"/><rect x="6" y="21.5" width="14" height="4.5" rx="1.5"/></svg></span>
+              <span class="dim-copy"><span class="dim-name">Operacional</span><span class="dim-line">Ampliar a capacidade de execução.</span></span>
+              <span class="dim-more"></span>
+            </summary>
+            <p class="dim-example"><span class="pro">Ela prepara, organiza e executa etapas repetidas. A revisão e a decisão continuam com você.</span><span class="biz">Etapas recorrentes de um processo passam a ser executadas por Funcionários Agênticos, com supervisão do departamento.</span></p>
+          </details>
+          <details class="dim" name="dimensoes" style="--dim:#C4511D; --glyph:#F2EEE6">
+            <summary>
+              <span class="dim-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><rect x="5" y="5" width="9" height="9" rx="2"/><rect x="18" y="5" width="9" height="9" rx="2"/><rect x="5" y="18" width="9" height="9" rx="2"/><rect x="18" y="18" width="9" height="9" rx="2"/></svg></span>
+              <span class="dim-copy"><span class="dim-name">Produtiva</span><span class="dim-line">Ampliar o volume e a qualidade das entregas.</span></span>
+              <span class="dim-more"></span>
+            </summary>
+            <p class="dim-example"><span class="pro">O seu tempo pode abrigar mais entregas, no volume e no cuidado que você define, quando o fluxo se sustenta.</span><span class="biz">Um departamento pode aumentar o volume de entregas que a equipe consegue revisar e concluir.</span></p>
+          </details>
+          <details class="dim" name="dimensoes" style="--dim:#8A5A2B; --glyph:#F2EEE6">
+            <summary>
+              <span class="dim-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><rect x="14" y="4" width="4" height="10" rx="1.5"/><rect x="7" y="15" width="18" height="4" rx="1.5"/><rect x="10" y="22" width="12" height="6" rx="2"/></svg></span>
+              <span class="dim-copy"><span class="dim-name">Temporal</span><span class="dim-line">Ampliar a disponibilidade para realizar trabalhos.</span></span>
+              <span class="dim-more"></span>
+            </summary>
+            <p class="dim-example"><span class="pro">Trabalho que não depende da sua hora pode seguir, dentro dos limites que você definiu, enquanto você está em outra atividade.</span><span class="biz">Demandas que não exigem presença contínua encontram capacidade disponível no processo, com supervisão.</span></p>
+          </details>
+          <details class="dim" name="dimensoes" style="--dim:#5C4033; --glyph:#F2EEE6">
+            <summary>
+              <span class="dim-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><rect x="4" y="12" width="8" height="8" rx="2"/><rect x="20" y="4" width="8" height="8" rx="2"/><rect x="20" y="20" width="8" height="8" rx="2"/><rect x="12" y="15" width="8" height="2" rx="1"/></svg></span>
+              <span class="dim-copy"><span class="dim-name">Coordenação</span><span class="dim-line">Ampliar a organização e a integração do trabalho.</span></span>
+              <span class="dim-more"></span>
+            </summary>
+            <p class="dim-example"><span class="pro">Ela organiza fila, prazo e o que está com cada capacidade especializada.</span><span class="biz">Os fluxos entre pessoas e Funcionários Agênticos ficam visíveis: o que entra, quem faz e o que pede supervisão.</span></p>
+          </details>
+          <details class="dim" name="dimensoes" style="--dim:#E0B089; --glyph:#171717">
+            <summary>
+              <span class="dim-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><rect x="6" y="6" width="20" height="20" rx="4"/><rect x="13" y="13" width="6" height="6" rx="1.5"/></svg></span>
+              <span class="dim-copy"><span class="dim-name">Especialização</span><span class="dim-line">Incorporar conhecimentos e capacidades especializadas.</span></span>
+              <span class="dim-more"></span>
+            </summary>
+            <p class="dim-example"><span class="pro">Você passa a contar com um conhecimento especializado parametrizado para a sua função, sem precisar dominá-lo por inteiro.</span><span class="biz">Um departamento incorpora um conhecimento especializado parametrizado, sem depender de uma única pessoa.</span></p>
+          </details>
+          <details class="dim" name="dimensoes" style="--dim:#3A322C; --glyph:#F2EEE6">
+            <summary>
+              <span class="dim-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><rect x="13" y="4" width="6" height="6" rx="1.5"/><rect x="6" y="20" width="6" height="6" rx="1.5"/><rect x="20" y="20" width="6" height="6" rx="1.5"/><rect x="15" y="10" width="2" height="10"/></svg></span>
+              <span class="dim-copy"><span class="dim-name">Estratégica</span><span class="dim-line">Ampliar planejamento e apoio à decisão.</span></span>
+              <span class="dim-more"></span>
+            </summary>
+            <p class="dim-example"><span class="pro">Ela organiza opções, critérios e consequências. A decisão continua sua.</span><span class="biz">A gestão recebe cenários e trade-offs preparados para a decisão do negócio.</span></p>
+          </details>
+          <details class="dim" name="dimensoes" style="--dim:#F0A06A; --glyph:#171717">
+            <summary>
+              <span class="dim-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><rect x="4" y="14" width="14" height="14" rx="3"/><rect x="16" y="4" width="12" height="12" rx="3"/></svg></span>
+              <span class="dim-copy"><span class="dim-name">Inovação</span><span class="dim-line">Ampliar experimentação e criação de novas soluções.</span></span>
+              <span class="dim-more"></span>
+            </summary>
+            <p class="dim-example"><span class="pro">Você experimenta uma oferta ou um jeito novo de entregar, num recorte pequeno, antes de ampliar.</span><span class="biz">A organização testa um processo novo num recorte, valida e só então amplia.</span></p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="band band-dark" id="ganhos" aria-labelledby="titulo-ganhos">
+      <div class="container">
+        <p class="kicker kicker-on-dark">03 / Ganhos</p>
+        <h2 id="titulo-ganhos">Mais capacidade para trabalhar. Mais possibilidades para prosperar.</h2>
+        <p class="lead lead-narrow">Ampliar suas capacidades pode transformar não apenas a maneira como você trabalha, mas também suas oportunidades, resultados e qualidade de vida.</p>
+        <ol class="gains">
+          <li>
+            <span class="level-num">01</span>
+            <div>
+              <h3><span class="pro">Maior autonomia profissional</span><span class="biz">Maior capacidade operacional</span></h3>
+              <p><span class="pro">Realize trabalhos mais complexos com menos dependência de apoio operacional.</span><span class="biz">Funcionários Agênticos entram nos processos e departamentos. A operação passa a executar mais frentes, com função, contexto, limites e supervisão.</span></p>
+            </div>
+          </li>
+          <li>
+            <span class="level-num">02</span>
+            <div>
+              <h3><span class="pro">Maior potencial de geração de renda</span><span class="biz">Maior potencial de crescimento e faturamento</span></h3>
+              <p><span class="pro">Amplie sua capacidade de atender clientes, assumir projetos maiores e desenvolver novos serviços, conforme a demanda e seu modelo de remuneração.</span><span class="biz">Mais capacidade de atender demanda e sustentar entregas pode abrir espaço para crescer, conforme o mercado e o modelo do negócio.</span></p>
+            </div>
+          </li>
+          <li>
+            <span class="level-num">03</span>
+            <div>
+              <h3><span class="pro">Maior competitividade</span><span class="biz">Maior competitividade empresarial</span></h3>
+              <p><span class="pro">Desenvolva condições para oferecer entregas mais completas, ágeis e consistentes.</span><span class="biz">A empresa desenvolve condições para responder com entregas mais completas, ágeis e consistentes.</span></p>
+            </div>
+          </li>
+          <li>
+            <span class="level-num">04</span>
+            <div>
+              <h3><span class="pro">Maior valorização profissional</span><span class="biz">Maior capacidade de gestão e liderança</span></h3>
+              <p><span class="pro">Amplie sua contribuição, passando da execução individual à capacidade de organizar, delegar e supervisionar trabalhos.</span><span class="biz">A liderança passa a organizar, delegar e supervisionar profissionais e Funcionários Agênticos, em vez de concentrar a execução.</span></p>
+            </div>
+          </li>
+          <li>
+            <span class="level-num">05</span>
+            <div>
+              <h3><span class="pro">Melhor qualidade de vida</span><span class="biz">Maior eficiência e sustentabilidade operacional</span></h3>
+              <p><span class="pro">Crie oportunidades para reduzir a sobrecarga operacional e dedicar mais tempo ao que realmente importa.</span><span class="biz">A arquitetura do trabalho pode aliviar a sobrecarga da operação e sustentar responsabilidades mais claras entre pessoas e Funcionários Agênticos.</span></p>
+            </div>
+          </li>
+        </ol>
+        <a class="btn btn-solid" href="#conversa">
+          <span class="pro">Quero ampliar minhas capacidades</span>
+          <span class="biz">Quero transformar meu negócio</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="band band-paper" id="mapa" aria-labelledby="titulo-mapa">
+      <div class="container">
+        <p class="index">04 / Jornadas</p>
+        <h2 id="titulo-mapa">
+          <span class="pro">As jornadas IA PhD</span>
+          <span class="biz">O percurso de Negócios</span>
+        </h2>
+        <p class="journey-names pro">Core · Practitioner · Builder · Architect · Leader</p>
+        <p class="body body-intro">
+          <span class="pro">Core e Practitioner formam a base — Immersion e Agentic Practitioner. Builder, Architect e Leader são especializações. Nenhuma delas é obrigatória.</span>
+          <span class="biz">São os movimentos da transformação na organização. A conversa define por onde começar. Na formação das equipes, Builder, Architect e Leader fazem parte do percurso.</span>
+        </p>
+        <div class="pro">
+          <div class="journey">
+            <div class="journey-base">
+              <p class="journey-kicker">Base</p>
+              <ol class="map">
+                <li>
+                  <span class="node" aria-hidden="true"></span>
+                  <span class="num">01</span>
+                  <div>
+                    <p class="journey-code">Core</p>
+                    <h3>Immersion</h3>
+                    <p>Descubra a Era Agêntica e compreenda a transformação do trabalho.</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="node" aria-hidden="true"></span>
+                  <span class="num">02</span>
+                  <div>
+                    <p class="journey-code">Practitioner</p>
+                    <h3>Agentic Practitioner</h3>
+                    <p>Desenvolva as habilidades para incorporar, preparar e trabalhar com Funcionários Agênticos.</p>
+                  </div>
+                </li>
+              </ol>
+            </div>
+            <div class="journey-fork">
+              <p class="journey-kicker">Especializações</p>
+              <p class="journey-note">Três caminhos possíveis. Você escolhe se, e quando, seguir algum deles.</p>
+              <ol class="map map-dest">
+                <li>
+                  <span class="node" aria-hidden="true"></span>
+                  <span class="num">03</span>
+                  <div>
+                    <p class="journey-code">Builder</p>
+                    <h3>Agent Builder</h3>
+                    <p>Construa e amplie capacidades agênticas, ferramentas e integrações.</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="node" aria-hidden="true"></span>
+                  <span class="num">04</span>
+                  <div>
+                    <p class="journey-code">Architect</p>
+                    <h3>Agentic Work Architect</h3>
+                    <p>Desenhe e engenhe arquiteturas de trabalho com profissionais e Funcionários Agênticos.</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="node" aria-hidden="true"></span>
+                  <span class="num">05</span>
+                  <div>
+                    <p class="journey-code">Leader</p>
+                    <h3>Agentic Leader</h3>
+                    <p>Lidere e governe uma força de trabalho híbrida.</p>
+                  </div>
+                </li>
+              </ol>
+            </div>
+          </div>
+          <div class="along">
+            <article>
+              <p class="journey-kicker">Transversal</p>
+              <h3>Internal Champion</h3>
+              <p>Forma quem mobiliza pessoas e sustenta a adoção agêntica. Atravessa a jornada. Não é uma etapa a mais.</p>
+            </article>
+            <article>
+              <p class="journey-kicker">Continuidade</p>
+              <h3>Continuous Academy</h3>
+              <p>A continuidade de quem já entrou: atualização, experimentação e troca ao longo do tempo.</p>
+            </article>
+          </div>
+        </div>
+        <div class="biz">
+          <ol class="map">
+            <li>
+              <span class="node" aria-hidden="true"></span>
+              <span class="num">01</span>
+              <div>
+                <h3>Diagnóstico de Maturidade Agêntica</h3>
+                <p>Identifique oportunidades, limitações e prioridades de transformação.</p>
+              </div>
+            </li>
+            <li>
+              <span class="node" aria-hidden="true"></span>
+              <span class="num">02</span>
+              <div>
+                <h3>Estratégia de Transformação Agêntica</h3>
+                <p>Defina a visão, o planejamento e a arquitetura futura do trabalho.</p>
+              </div>
+            </li>
+            <li>
+              <span class="node" aria-hidden="true"></span>
+              <span class="num">03</span>
+              <div>
+                <h3>Implantação de Funcionários Agênticos</h3>
+                <p>Crie, parametrize e incorpore capacidades agênticas ao negócio.</p>
+              </div>
+            </li>
+            <li>
+              <span class="node" aria-hidden="true"></span>
+              <span class="num">04</span>
+              <div>
+                <h3>Arquitetura de Trabalho Agêntico</h3>
+                <p>Redesenhe fluxos, responsabilidades e a colaboração entre profissionais e Funcionários Agênticos.</p>
+              </div>
+            </li>
+            <li>
+              <span class="node" aria-hidden="true"></span>
+              <span class="num">05</span>
+              <div>
+                <h3>Organização Agêntica</h3>
+                <p>Desenvolva coordenação, liderança e governança da força de trabalho híbrida.</p>
+              </div>
+            </li>
+            <li>
+              <span class="node node-hot" aria-hidden="true"></span>
+              <span class="num">06</span>
+              <div>
+                <h3>Acompanhamento e Evolução</h3>
+                <p>Sustente a melhoria contínua das capacidades implantadas.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+        <div class="doors">
+          <p class="index">Portas de entrada</p>
+          <h2>Outras formas de começar</h2>
+          <ul class="door-list">
+            <li>
+              <h3>Workshop Agêntico On-line</h3>
+              <p>Experiência introdutória. Desperta o interesse e conduz à Imersão.</p>
+            </li>
+            <li>
+              <h3>Imersões especializadas</h3>
+              <p>Para profissões e setores, como síndicos e contadores.</p>
+            </li>
+            <li>
+              <h3>Imersão In Company</h3>
+              <p>A jornada com equipes de organizações públicas e privadas.</p>
+            </li>
+            <li>
+              <h3>Mentoria Executiva Agêntica</h3>
+              <p>Acompanhamento para desenvolver capacidades e a estratégia agêntica.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="band band-dark" id="destino" aria-labelledby="titulo-destino">
+      <div class="container">
+        <div class="destiny">
+          <svg class="destiny-mark" viewBox="0 0 140.4 140.4" aria-hidden="true">
+            <rect x="0" y="90" width="50.4" height="50.4" rx="12.6" fill="#F2EEE6"/>
+            <rect x="45" y="45" width="50.4" height="50.4" rx="12.6" fill="#F2EEE6"/>
+            <rect x="90" y="0" width="50.4" height="50.4" rx="12.6" fill="#F0783C"/>
+          </svg>
+          <div>
+            <p class="kicker kicker-on-dark">
+              <span class="pro">05 / Destino</span>
+              <span class="biz">05 / Destino</span>
+            </p>
+            <h2 id="titulo-destino">
+              <span class="pro">De sua primeira Funcionária Agêntica à sua Chief of Staff Agêntica.</span>
+              <span class="biz">Sua Organização Agêntica</span>
+            </h2>
+            <p class="lead">
+              <span class="pro partner-line">Sua parceira de evolução na Era Agêntica.</span>
+              <span class="biz">Uma organização que integra profissionais, Funcionários Agênticos, processos, departamentos e estruturas de coordenação e governança — com função, contexto, limites e supervisão.</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="pro">
+          <div class="partner">
+            <p>Uma Funcionária Agêntica que evolui com você ao longo das jornadas da IA PhD, incorporando conhecimentos, habilidades, ferramentas e responsabilidades.</p>
+            <p>Ela apoia o seu desenvolvimento, ajuda você a experimentar novas formas de trabalhar e evolui até se tornar sua Chief of Staff Agêntica, capaz de criar e parametrizar novas capacidades quando autorizada, e de coordenar, distribuir, acompanhar e consolidar o trabalho de Funcionários Agênticos especializados, sob a sua liderança e supervisão.</p>
+            <p class="partner-diff"><span class="mod mod-hot" aria-hidden="true"></span>A grande diferença: ela evolui e ajuda você a evoluir.</p>
+
+            <ol class="pair">
+              <li>
+                <span class="level-num">01</span>
+                <p class="pair-stage">Immersion</p>
+                <div class="pair-side">
+                  <p class="pair-who">Profissional</p>
+                  <p>Descobre a Era Agêntica.</p>
+                </div>
+                <div class="pair-side">
+                  <p class="pair-who">Funcionária Agêntica</p>
+                  <p>Acompanha a descoberta e ajuda a compreender a nova realidade do trabalho.</p>
+                </div>
+              </li>
+              <li>
+                <span class="level-num">02</span>
+                <p class="pair-stage">Agentic Practitioner</p>
+                <div class="pair-side">
+                  <p class="pair-who">Profissional</p>
+                  <p>Aprende a trabalhar com Funcionários Agênticos.</p>
+                </div>
+                <div class="pair-side">
+                  <p class="pair-who">Funcionária Agêntica</p>
+                  <p>É parametrizada, treinada e começa a assumir trabalhos.</p>
+                </div>
+              </li>
+              <li>
+                <span class="level-num">03</span>
+                <p class="pair-stage">Agent Builder</p>
+                <div class="pair-side">
+                  <p class="pair-who">Profissional</p>
+                  <p>Aprende a construir novas capacidades.</p>
+                </div>
+                <div class="pair-side">
+                  <p class="pair-who">Funcionária Agêntica</p>
+                  <p>Apoia a construção e amplia as próprias habilidades e ferramentas.</p>
+                </div>
+              </li>
+              <li>
+                <span class="level-num">04</span>
+                <p class="pair-stage">Agentic Work Architect</p>
+                <div class="pair-side">
+                  <p class="pair-who">Profissional</p>
+                  <p>Aprende a arquitetar o trabalho.</p>
+                </div>
+                <div class="pair-side">
+                  <p class="pair-who">Funcionária Agêntica</p>
+                  <p>Ajuda a estruturar fluxos e coordenar capacidades especializadas.</p>
+                </div>
+              </li>
+              <li>
+                <span class="level-num">05</span>
+                <p class="pair-stage">Agentic Leader</p>
+                <div class="pair-side">
+                  <p class="pair-who">Profissional</p>
+                  <p>Desenvolve liderança e governança.</p>
+                </div>
+                <div class="pair-side">
+                  <p class="pair-who">Funcionária Agêntica</p>
+                  <p>Atua como Chief of Staff Agêntica, coordenando a força de trabalho.</p>
+                </div>
+              </li>
+            </ol>
+
+            <div class="cycle">
+              <h3>O papel do Protocolo Gênesis</h3>
+              <p>Ele não apenas registra a evolução. Conecta três movimentos e faz os dois protagonistas avançarem juntos.</p>
+              <ol class="cycle-steps">
+                <li>
+                  <span class="level-num">01</span>
+                  <p>O profissional desenvolve novas competências.</p>
+                </li>
+                <li>
+                  <span class="level-num">02</span>
+                  <p>Sua Funcionária Agêntica incorpora novas capacidades.</p>
+                </li>
+                <li>
+                  <span class="level-num">03</span>
+                  <p>Ela usa essas capacidades para apoiar você na jornada seguinte.</p>
+                </li>
+              </ol>
+              <p class="cycle-note">A Chief of Staff não ganha autonomia nem permissões automaticamente. Cada responsabilidade nova é configurada, testada e validada.</p>
+            </div>
+
+            <article class="vow">
+              <p>Na IA PhD, você não evolui sozinho. Sua Funcionária Agêntica evolui com você e ajuda você a evoluir.</p>
+              <p class="vow-aside">O destino é prosperar na Era Agêntica, com uma força de trabalho que amplia continuamente as suas capacidades.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="band band-paper" id="faq" aria-labelledby="titulo-faq">
+      <div class="container narrow">
+        <p class="index">Perguntas frequentes</p>
+        <h2 id="titulo-faq">Perguntas frequentes</h2>
+        <div class="faqs">
+          <details>
+            <summary>
+              <span>Preciso saber programar?</span>
+              <span class="plus" aria-hidden="true"></span>
+            </summary>
+            <p>Não. O percurso começa pela função, pelo resultado e pelo contexto. Você aprende a preparar, parametrizar, delegar e supervisionar um Funcionário Agêntico. Programar não é pré-requisito.</p>
+          </details>
+          <details>
+            <summary>
+              <span>O que é o Protocolo Gênesis?</span>
+              <span class="plus" aria-hidden="true"></span>
+            </summary>
+            <p class="pro">Na jornada profissional, ele liga a sua evolução à da sua Funcionária Agêntica. Você desenvolve uma competência, ela incorpora a capacidade e usa essa capacidade para apoiar a etapa seguinte. Responsabilidades novas são configuradas, testadas e validadas.</p>
+            <p class="biz">É o que liga as três evoluções. Em cada etapa, a pessoa, a capacidade agêntica e a organização avançam juntas: experimentar uma função real, validar supervisão e limites, e evoluir somente o que se sustentou.</p>
+          </details>
+          <details>
+            <summary>
+              <span>Preciso fazer todas as especializações?</span>
+              <span class="plus" aria-hidden="true"></span>
+            </summary>
+            <p class="pro">Não. A base — Immersion e Agentic Practitioner — é o percurso. Builder, Architect e Leader são especializações, e nenhuma delas é obrigatória.</p>
+            <p class="biz">Na formação das equipes, sim. Builder, Architect e Leader integram o percurso, junto com Immersion e Agentic Practitioner. O movimento de Negócios começa pelo que a conversa definir.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="band band-dark close" id="conversa" aria-labelledby="titulo-conversa">
+      <div class="container close-grid">
+        <div>
+          <p class="kicker kicker-on-dark">06 / Convite</p>
+          <h2 id="titulo-conversa">O futuro do trabalho começa com uma decisão.</h2>
+          <p class="lead">Desenvolva as capacidades necessárias para trabalhar e gerar valor na Era Agêntica.</p>
+          <p class="fine">
+            <span class="pro">Formato, data e investimento da Imersão são confirmados nesta conversa.</span>
+            <span class="biz">O próximo movimento é definido a partir do contexto do seu negócio.</span>
+          </p>
+        </div>
+
+        <form class="card" id="form-conversa" novalidate>
+          <h3 class="card-title">Fale com a IA PhD</h3>
+          <p class="card-lead">
+            <span class="pro">Inscrição de interesse na Imersão.</span>
+            <span class="biz">Pedido de diagnóstico ou conversa estratégica.</span>
+          </p>
+
+          <div class="field">
+            <label for="nome">Nome</label>
+            <input id="nome" name="nome" type="text" autocomplete="name" required>
+            <p class="error" id="erro-nome" hidden></p>
+          </div>
+          <div class="field">
+            <label for="email">E-mail</label>
+            <input id="email" name="email" type="email" autocomplete="email" inputmode="email" required>
+            <p class="error" id="erro-email" hidden></p>
+          </div>
+          <div class="field">
+            <label for="telefone">WhatsApp</label>
+            <input id="telefone" name="telefone" type="tel" autocomplete="tel" inputmode="tel" required>
+            <p class="error" id="erro-telefone" hidden></p>
+          </div>
+          <div class="field">
+            <label for="organizacao">Empresa ou organização <span class="optional">(opcional)</span></label>
+            <input id="organizacao" name="organizacao" type="text" autocomplete="organization">
+          </div>
+          <div class="field">
+            <label for="funcao">Qual função de trabalho você quer estruturar primeiro? <span class="optional">(opcional)</span></label>
+            <textarea id="funcao" name="funcao" rows="3"></textarea>
+          </div>
+
+          <button class="btn btn-solid btn-block" type="submit">
+            <span class="pro">Quero ampliar minhas capacidades</span>
+            <span class="biz">Quero transformar meu negócio</span>
+          </button>
+          <p class="form-note">Ao enviar, abrimos o WhatsApp da IA PhD com a sua mensagem pronta. Nada é publicado e nenhum pagamento acontece nesta página.</p>
+          <p class="form-status" id="form-status" role="status" hidden></p>
+          <p id="form-fallback" hidden>
+            <a class="text-link" id="wa-link" target="_blank" rel="noopener noreferrer">Abrir a conversa no WhatsApp</a>
+          </p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="brand footer-brand">
+        <svg class="mark" viewBox="0 0 140.4 140.4" aria-hidden="true">
+          <rect x="0" y="90" width="50.4" height="50.4" rx="12.6" fill="#F2EEE6"/>
+          <rect x="45" y="45" width="50.4" height="50.4" rx="12.6" fill="#F2EEE6"/>
+          <rect x="90" y="0" width="50.4" height="50.4" rx="12.6" fill="#F0783C"/>
+        </svg>
+        <span class="wordmark"><span class="ia">ia</span><span class="phd">PhD</span></span>
+      </div>
+      <p class="signature">Engenhando a Nova Arquitetura do Trabalho.</p>
+      <p class="e4">Educação · Experimentação · Expertise · Escala</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
