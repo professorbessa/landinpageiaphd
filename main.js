@@ -57,12 +57,17 @@
   }
 
   function messageFor(data) {
+    var imersao = root.dataset.oferta === "imersao-0512";
     var perfil = root.dataset.perfil === "empresario" ? "empresário" : "profissional";
-    var pedido = root.dataset.perfil === "empresario"
-      ? "Quero um diagnóstico ou uma conversa estratégica."
-      : "Quero ampliar minhas capacidades e inscrever meu interesse na Imersão.";
+    var pedido = imersao
+      ? "Quero participar da Imersão especializada de 5 de dezembro de 2026."
+      : root.dataset.perfil === "empresario"
+        ? "Quero um diagnóstico ou uma conversa estratégica."
+        : "Quero ampliar minhas capacidades e inscrever meu interesse na Imersão.";
     var lines = [
-      "Olá, IA PhD. Cheguei pela landing da Era Agêntica.",
+      imersao
+        ? "Olá, IA PhD. Cheguei pela página da Imersão de 5 de dezembro."
+        : "Olá, IA PhD. Cheguei pela landing da Era Agêntica.",
       "Perfil: " + perfil + ".",
       pedido,
       "Nome: " + data.nome,
@@ -74,7 +79,7 @@
     return lines.join("\n");
   }
 
-  form.addEventListener("submit", function (event) {
+  if (form) form.addEventListener("submit", function (event) {
     event.preventDefault();
     var nome = form.nome.value.trim();
     var email = form.email.value.trim();
@@ -124,4 +129,32 @@
     opener.click();
     opener.remove();
   });
+
+  var alertBox = document.getElementById("imersao-alert");
+  var bar = document.getElementById("imersao-bar");
+  var dismiss = document.getElementById("imersao-seguir");
+  var visitKey = "iaphd-imersao-0512";
+
+  function showBar() {
+    if (!bar) return;
+    bar.hidden = false;
+    root.dataset.imersaoBar = "on";
+  }
+
+  if (alertBox && bar) {
+    if (sessionStorage.getItem(visitKey) === "1") {
+      showBar();
+    } else {
+      alertBox.showModal();
+    }
+    alertBox.addEventListener("close", function () {
+      sessionStorage.setItem(visitKey, "1");
+      showBar();
+    });
+    if (dismiss) {
+      dismiss.addEventListener("click", function () {
+        alertBox.close();
+      });
+    }
+  }
 })();

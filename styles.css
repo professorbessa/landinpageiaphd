@@ -76,6 +76,91 @@ html[data-campanha="false"] .escolha { display: revert; }
 html[data-campanha="true"][data-perfil="profissional"] .campanha.pro,
 html[data-campanha="true"][data-perfil="empresario"] .campanha.biz { display: revert; }
 
+.imersao-bar {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 8px 16px;
+  background: var(--laranja);
+  color: var(--grafite);
+  font-family: var(--sans);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.imersao-bar[hidden] { display: none !important; }
+
+.imersao-bar a {
+  color: inherit;
+  text-decoration: none;
+}
+
+html[data-imersao-bar="on"] .header { top: 44px; }
+
+.imersao-alert {
+  width: min(520px, calc(100% - 32px));
+  margin: auto;
+  padding: 32px 28px 24px;
+  border: none;
+  border-radius: 22px;
+  background: var(--papel);
+  color: var(--grafite);
+}
+
+.imersao-alert::backdrop {
+  background: rgba(23, 23, 23, 0.78);
+}
+
+.imersao-date {
+  display: inline-flex;
+  margin: 0 0 16px;
+  padding: 6px 10px;
+  border-radius: 10px;
+  background: var(--laranja);
+  color: var(--grafite);
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.imersao-alert h2 {
+  max-width: 14em;
+  margin-bottom: 12px;
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+}
+
+.imersao-alert p:not(.imersao-date) {
+  max-width: 36ch;
+  margin-bottom: 22px;
+  color: var(--muted-light);
+}
+
+.imersao-alert .btn { width: 100%; }
+
+.imersao-dismiss {
+  display: block;
+  width: 100%;
+  margin-top: 8px;
+  padding: 12px;
+  border: none;
+  background: none;
+  color: var(--muted-light);
+  font: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.door-link { display: inline-block; margin-top: 10px; }
+
+.hero-link { color: var(--papel); }
+
 .header {
   position: sticky;
   top: 0;

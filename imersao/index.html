@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-oferta="imersao-0512" data-perfil="profissional">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IA PhD — Imersão especializada · 5 de dezembro</title>
+  <meta name="description" content="Imersão especializada da IA PhD em 5 de dezembro de 2026. Um dia para uma profissão ou um setor começar a incorporar Funcionários Agênticos.">
+  <meta name="theme-color" content="#171717">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <a class="skip" href="#conteudo">Ir para o conteúdo</a>
+
+  <header class="header">
+    <div class="container header-inner">
+      <a class="brand" href="/" aria-label="IA PhD, início">
+        <svg class="mark" viewBox="0 0 140.4 140.4" aria-hidden="true">
+          <rect x="0" y="90" width="50.4" height="50.4" rx="12.6" fill="#F2EEE6"/>
+          <rect x="45" y="45" width="50.4" height="50.4" rx="12.6" fill="#F2EEE6"/>
+          <rect x="90" y="0" width="50.4" height="50.4" rx="12.6" fill="#F0783C"/>
+        </svg>
+        <span class="brand-text">
+          <span class="wordmark"><span class="ia">ia</span><span class="phd">PhD</span></span>
+          <span class="brand-sig">Engenhando a Nova Arquitetura do Trabalho</span>
+        </span>
+      </a>
+      <a class="btn btn-ghost header-cta" href="#conversa">
+        <span class="cta-full">Quero participar</span>
+        <span class="cta-short">Participar</span>
+      </a>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero">
+      <div class="container hero-inner">
+        <p class="kicker kicker-on-dark">Imersão especializada · 05 de dezembro de 2026</p>
+        <h1 class="display">Um dia para a sua profissão começar na Era Agêntica.</h1>
+        <p class="lead">A imersão é para uma profissão ou um setor. Você experimenta como incorporar Funcionários Agênticos ao trabalho que já existe. Formato e participação são confirmados na conversa.</p>
+        <p class="fine"><a class="text-link hero-link" href="/">Conhecer a jornada completa</a></p>
+      </div>
+    </section>
+
+    <section class="band band-dark close" id="conversa" aria-labelledby="titulo-conversa">
+      <div class="container close-grid">
+        <div>
+          <p class="kicker kicker-on-dark">Participar</p>
+          <h2 id="titulo-conversa">Reserve a sua conversa para 5 de dezembro.</h2>
+          <p class="lead">O envio abre o WhatsApp da IA PhD com a mensagem da imersão pronta.</p>
+        </div>
+
+        <form class="card" id="form-conversa" novalidate>
+          <h3 class="card-title">Quero participar</h3>
+          <p class="card-lead">Imersão especializada de 5 de dezembro de 2026.</p>
+
+          <div class="field">
+            <label for="nome">Nome</label>
+            <input id="nome" name="nome" type="text" autocomplete="name" required>
+            <p class="error" id="erro-nome" hidden></p>
+          </div>
+          <div class="field">
+            <label for="email">E-mail</label>
+            <input id="email" name="email" type="email" autocomplete="email" inputmode="email" required>
+            <p class="error" id="erro-email" hidden></p>
+          </div>
+          <div class="field">
+            <label for="telefone">WhatsApp</label>
+            <input id="telefone" name="telefone" type="tel" autocomplete="tel" inputmode="tel" required>
+            <p class="error" id="erro-telefone" hidden></p>
+          </div>
+          <div class="field">
+            <label for="organizacao">Empresa ou organização <span class="optional">(opcional)</span></label>
+            <input id="organizacao" name="organizacao" type="text" autocomplete="organization">
+          </div>
+          <div class="field">
+            <label for="funcao">Profissão ou setor <span class="optional">(opcional)</span></label>
+            <textarea id="funcao" name="funcao" rows="3"></textarea>
+          </div>
+
+          <button class="btn btn-solid btn-block" type="submit">Quero participar</button>
+          <p class="form-note">Ao enviar, abrimos o WhatsApp da IA PhD com a sua mensagem pronta. Nada é publicado e nenhum pagamento acontece nesta página.</p>
+          <p class="form-status" id="form-status" role="status" hidden></p>
+          <p id="form-fallback" hidden>
+            <a class="text-link" id="wa-link" target="_blank" rel="noopener noreferrer">Abrir a conversa no WhatsApp</a>
+          </p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="brand footer-brand">
+        <svg class="mark" viewBox="0 0 140.4 140.4" aria-hidden="true">
+          <rect x="0" y="90" width="50.4" height="50.4" rx="12.6" fill="#F2EEE6"/>
+          <rect x="45" y="45" width="50.4" height="50.4" rx="12.6" fill="#F2EEE6"/>
+          <rect x="90" y="0" width="50.4" height="50.4" rx="12.6" fill="#F0783C"/>
+        </svg>
+        <span class="wordmark"><span class="ia">ia</span><span class="phd">PhD</span></span>
+      </div>
+      <p class="signature">Engenhando a Nova Arquitetura do Trabalho.</p>
+      <p class="e4">Educação · Experimentação · Expertise · Escala</p>
+    </div>
+  </footer>
+
+  <script src="/main.js"></script>
+</body>
+</html>
