@@ -32,8 +32,10 @@
     choice.addEventListener("click", function (event) {
       event.preventDefault();
       selectPerfil(choice.dataset.perfil, root.dataset.campanha === "true");
-      var mapa = document.getElementById("mapa");
-      if (mapa) mapa.scrollIntoView({ behavior: "smooth", block: "start" });
+      if (choice.dataset.perfil === "empresario") {
+        var cena = document.getElementById("cena-negocio");
+        if (cena) cena.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      }
     });
   });
 

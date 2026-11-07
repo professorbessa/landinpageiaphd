@@ -556,6 +556,22 @@ h2 {
   letter-spacing: -0.02em;
 }
 
+.choice-scene {
+  max-width: 760px;
+  margin: 22px auto 0;
+  scroll-margin-top: calc(var(--header) + 16px);
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.choice-scene img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+html[data-imersao-bar="on"] .choice-scene { scroll-margin-top: calc(var(--header) + 60px); }
+
 .choice-note {
   max-width: 68ch;
   margin-top: 22px;
