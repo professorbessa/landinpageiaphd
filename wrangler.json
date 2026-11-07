@@ -8,6 +8,8 @@
   },
   "routes": [
     { "pattern": "aiphd.com.br", "custom_domain": true },
-    { "pattern": "www.aiphd.com.br", "custom_domain": true }
+    { "pattern": "www.aiphd.com.br", "custom_domain": true },
+    { "pattern": "iaphd.com.br", "custom_domain": true },
+    { "pattern": "www.iaphd.com.br", "custom_domain": true }
   ]
 }
