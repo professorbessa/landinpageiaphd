@@ -1,7 +1,13 @@
 {
   "name": "landinpageiaphd",
+  "account_id": "66dd413f227c50c5baa0ae4cfd31a0a9",
   "compatibility_date": "2026-11-06",
+  "workers_dev": true,
   "assets": {
     "directory": "."
-  }
+  },
+  "routes": [
+    { "pattern": "aiphd.com.br", "custom_domain": true },
+    { "pattern": "www.aiphd.com.br", "custom_domain": true }
+  ]
 }
