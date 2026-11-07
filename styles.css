@@ -615,6 +615,7 @@ html[data-perfil="empresario"] .choice[data-perfil="empresario"] {
 .mod-hot { background: var(--laranja); }
 
 .band .btn { margin-top: 28px; }
+.hero .btn { margin-top: 28px; }
 
 .lead-narrow { max-width: 46ch; }
 

@@ -62,8 +62,8 @@
     var oferta = root.dataset.oferta || "";
     if (oferta === "imersao-0512") {
       return {
-        origem: "Olá, IA PhD. Cheguei pela página da Imersão de 5 de dezembro.",
-        pedido: "Quero participar da Imersão especializada de 5 de dezembro de 2026."
+        origem: "Olá, IA PhD. Cheguei pela página da Imersão presencial de Maceió.",
+        pedido: "Quero participar da Imersão presencial de Maceió, em 5 de dezembro de 2026."
       };
     }
     if (oferta === "immersion") {
