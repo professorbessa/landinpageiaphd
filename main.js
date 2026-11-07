@@ -32,6 +32,8 @@
     choice.addEventListener("click", function (event) {
       event.preventDefault();
       selectPerfil(choice.dataset.perfil, root.dataset.campanha === "true");
+      var mapa = document.getElementById("mapa");
+      if (mapa) mapa.scrollIntoView({ behavior: "smooth", block: "start" });
     });
   });
 
