@@ -32,10 +32,8 @@
     choice.addEventListener("click", function (event) {
       event.preventDefault();
       selectPerfil(choice.dataset.perfil, root.dataset.campanha === "true");
-      if (choice.dataset.perfil === "empresario") {
-        var cena = document.getElementById("cena-negocio");
-        if (cena) cena.scrollIntoView({ behavior: "smooth", block: "nearest" });
-      }
+      var cena = document.getElementById(choice.dataset.perfil === "empresario" ? "cena-negocio" : "cena-profissional");
+      if (cena) cena.scrollIntoView({ behavior: "smooth", block: "nearest" });
     });
   });
 
