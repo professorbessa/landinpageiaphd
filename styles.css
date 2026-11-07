@@ -925,6 +925,57 @@ ol.map.map-base > li::before { display: none; }
 
 .close-grid { align-items: start; }
 
+.ceo {
+  display: grid;
+  grid-template-columns: 96px minmax(0, 1fr);
+  gap: 16px;
+  align-items: center;
+  margin-top: 28px;
+  padding: 16px;
+  border-radius: 18px;
+  background: var(--grafite-2);
+}
+
+.ceo img {
+  width: 96px;
+  height: 120px;
+  object-fit: cover;
+  object-position: 34% 0%;
+  border-radius: 14px;
+}
+
+.ceo-kicker {
+  margin: 0;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--laranja);
+}
+
+.ceo-name {
+  margin: 6px 0 0;
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 1.35rem;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.ceo-role {
+  margin: 4px 0 0;
+  color: var(--muted-dark);
+  font-size: 0.95rem;
+}
+
+.ceo-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
 .fine {
   margin-top: 18px;
   max-width: 46ch;
