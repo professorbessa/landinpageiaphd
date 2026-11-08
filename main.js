@@ -185,7 +185,14 @@
     if (!bar) return;
     bar.hidden = false;
     root.dataset.imersaoBar = "on";
+    root.style.setProperty("--imersao-bar", bar.offsetHeight + "px");
   }
+
+  window.addEventListener("resize", function () {
+    if (bar && root.dataset.imersaoBar === "on") {
+      root.style.setProperty("--imersao-bar", bar.offsetHeight + "px");
+    }
+  });
 
   if (alertBox && bar) {
     if (sessionStorage.getItem(visitKey) === "1") {
