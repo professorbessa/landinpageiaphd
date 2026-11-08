@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=sem-card">
   <script>
     (function () {
       var raw = (new URLSearchParams(location.search).get("perfil") || "")
@@ -18,14 +18,17 @@
         .normalize("NFD")
         .replace(/[\u0300-\u036f]/g, "");
       var empresarial = raw === "empresario" || raw === "empresa";
-      var campanha = raw === "profissional" || empresarial;
-      var perfil = empresarial ? "empresario" : "profissional";
+      var lider = raw === "lider" || raw === "gestor";
+      var campanha = raw === "profissional" || empresarial || lider;
+      var perfil = empresarial ? "empresario" : lider ? "lider" : "profissional";
       document.documentElement.dataset.perfil = perfil;
       document.documentElement.dataset.campanha = campanha ? "true" : "false";
       if (campanha) {
         document.title = empresarial
           ? "IA PhD — Para empresários"
-          : "IA PhD — Para profissionais";
+          : lider
+            ? "IA PhD — Para líderes"
+            : "IA PhD — Para profissionais";
       }
     })();
   </script>
@@ -77,18 +80,21 @@
           <span class="escolha">01 / A grande transformação</span>
           <span class="campanha pro">Para profissionais</span>
           <span class="campanha biz">Para empresários</span>
+          <span class="campanha lid">Para líderes</span>
         </p>
 
         <h1 class="display">
-          <span class="escolha">O futuro do trabalho<br>não será apenas humano.<br>Será Humano + <span class="accent">Agêntico.</span></span>
+          <span class="escolha">O futuro próximo do trabalho e dos negócios<br>será construído por uma nova força de trabalho:<br>Profissionais + <span class="accent">Funcionários Agênticos.</span></span>
           <span class="campanha pro">Amplie a sua capacidade de trabalho.<br>Até a sua <span class="accent">Chief of Staff Agêntica.</span></span>
           <span class="campanha biz">Amplie a capacidade do seu negócio.<br>Até uma <span class="accent">Organização Agêntica.</span></span>
+          <span class="campanha lid">Amplie sua liderança.<br>Transforme a maneira de gerir o trabalho.</span>
         </h1>
 
         <p class="lead">
-          <span class="escolha">Não basta adotar IA. É hora de engenhar uma nova arquitetura de trabalho, incorporando Funcionários Agênticos às capacidades de profissionais e empresas.</span>
+          <span class="escolha">Não basta adotar IA. É hora de engenhar uma nova arquitetura de trabalho e dos negócios, incorporando Funcionários Agênticos às capacidades de profissionais e empresas.</span>
           <span class="campanha pro">Aprenda a preparar, criar, parametrizar, treinar, delegar e supervisionar Funcionários Agênticos. A jornada evolui com você, até a sua própria Chief of Staff Agêntica.</span>
           <span class="campanha biz">Incorpore Funcionários Agênticos ao negócio, transforme a arquitetura do trabalho e evolua pessoas, processos e governança como um único sistema.</span>
+          <span class="campanha lid">Prepare-se para orientar, coordenar e governar uma força de trabalho formada por profissionais e Funcionários Agênticos.</span>
         </p>
 
         <div class="horizon">
@@ -168,9 +174,28 @@
             <span class="choice-more">E negócios de diferentes portes que desejam incorporar capacidades agênticas aos processos, equipes e departamentos.</span>
             <span class="choice-go">Explorar jornada empresarial</span>
           </a>
+          <a class="choice" href="?perfil=lider" data-perfil="lider">
+            <span class="choice-index">03 / Líder</span>
+            <span class="choice-title">Sou Líder ou Gestor</span>
+            <span class="choice-text">Amplie sua liderança. Transforme a maneira de gerir o trabalho.</span>
+            <span class="choice-for">Oportunidades para:</span>
+            <ul class="choice-tags">
+              <li>Gestores</li>
+              <li>Líderes</li>
+              <li>Coordenadores</li>
+              <li>Supervisores</li>
+              <li>Diretores</li>
+              <li>Heads</li>
+            </ul>
+            <span class="choice-more">Prepare-se para orientar, coordenar e governar uma força de trabalho formada por profissionais e Funcionários Agênticos.</span>
+            <span class="choice-go">Explorar jornada de liderança</span>
+          </a>
         </div>
         <figure class="pro choice-scene" id="cena-profissional">
           <img src="midia/cena-profissional.png" alt="Profissional e Funcionária Agêntica no escritório. Selo MLN, Modelo de Linguagem de Negócio." width="522" height="351">
+        </figure>
+        <figure class="lid choice-scene" id="cena-lider">
+          <img src="midia/cena-lider.png" alt="Líder com o selo MLN, Funcionária Agêntica e equipe no ambiente de trabalho." width="1024" height="659">
         </figure>
         <figure class="biz choice-scene" id="cena-negocio">
           <img src="midia/cena-negocio.png" alt="Escritório com profissionais e Funcionários Agênticos. Selo MLN, Modelo de Linguagem de Negócio." width="1024" height="728">
@@ -184,9 +209,9 @@
 
     <section class="band band-paper" id="dimensoes" aria-labelledby="titulo-dimensoes">
       <div class="container">
-        <p class="index">02 / Capacidades</p>
-        <h2 id="titulo-dimensoes"><span class="pro">Amplie suas capacidades. Transforme sua forma de trabalhar.</span><span class="biz">Amplie as capacidades. Transforme o seu negócio.</span></h2>
-        <p class="body body-intro"><span class="pro">Descubra como incorporar Funcionários Agênticos pode ampliar oito dimensões fundamentais da sua capacidade de trabalho e geração de valor.</span><span class="biz">Incorpore Funcionários Agênticos para ampliar as capacidades cognitivas, operacionais, produtivas e estratégicas do seu negócio, conectando pessoas, processos e conhecimento em uma nova arquitetura de trabalho.</span></p>
+        <p class="index">02 / Ampliação de Capacidades</p>
+        <h2 id="titulo-dimensoes"><span class="pro">Amplie suas capacidades. Transforme sua forma de trabalhar.</span><span class="biz">Amplie as capacidades. Transforme o seu negócio.</span><span class="lid">Amplie sua liderança. Transforme a maneira de gerir o trabalho.</span></h2>
+        <p class="body body-intro"><span class="pro">Descubra como incorporar Funcionários Agênticos pode ampliar oito dimensões fundamentais da sua capacidade de trabalho e geração de valor.</span><span class="biz">Incorpore Funcionários Agênticos para ampliar as capacidades cognitivas, operacionais, produtivas e estratégicas do seu negócio, conectando pessoas, processos e conhecimento em uma nova arquitetura de trabalho.</span><span class="lid">Prepare-se para orientar, coordenar e governar uma força de trabalho formada por profissionais e Funcionários Agênticos.</span></p>
         <div class="dims">
           <details class="dim" name="dimensoes" open style="--dim:#F0783C; --glyph:#171717">
             <summary>
@@ -194,7 +219,7 @@
               <span class="dim-copy"><span class="dim-name">Cognitiva</span><span class="dim-line">Ampliar análise, compreensão e raciocínio.</span></span>
               <span class="dim-more"></span>
             </summary>
-            <p class="dim-example"><span class="pro">Uma Funcionária Agêntica reúne o contexto, compara leituras e devolve uma análise para você decidir.</span><span class="biz">A liderança recebe sínteses da operação, de contratos ou do mercado para decidir com mais contexto.</span></p>
+            <p class="dim-example"><span class="pro">A Funcionária Agêntica organiza informações, conecta conhecimentos, analisa diferentes perspectivas e apresenta conclusões que ajudam o profissional a tomar decisões mais fundamentadas.</span></p>
           </details>
           <details class="dim" name="dimensoes" style="--dim:#171717; --glyph:#F2EEE6">
             <summary>
@@ -202,7 +227,7 @@
               <span class="dim-copy"><span class="dim-name">Operacional</span><span class="dim-line">Ampliar a capacidade de execução.</span></span>
               <span class="dim-more"></span>
             </summary>
-            <p class="dim-example"><span class="pro">Ela prepara, organiza e executa etapas repetidas. A revisão e a decisão continuam com você.</span><span class="biz">Etapas recorrentes de um processo passam a ser executadas por Funcionários Agênticos, com supervisão do departamento.</span></p>
+            <p class="dim-example"><span class="pro">A Funcionária Agêntica assume atividades operacionais, executa tarefas e conduz processos dentro dos limites estabelecidos, liberando o profissional para trabalhos de maior valor.</span><span class="biz">Etapas recorrentes de um processo passam a ser executadas por Funcionários Agênticos, com supervisão do departamento.</span></p>
           </details>
           <details class="dim" name="dimensoes" style="--dim:#C4511D; --glyph:#F2EEE6">
             <summary>
@@ -210,7 +235,7 @@
               <span class="dim-copy"><span class="dim-name">Produtiva</span><span class="dim-line">Ampliar o volume e a qualidade das entregas.</span></span>
               <span class="dim-more"></span>
             </summary>
-            <p class="dim-example"><span class="pro">O seu tempo pode abrigar mais entregas, no volume e no cuidado que você define, quando o fluxo se sustenta.</span><span class="biz">Um departamento pode aumentar o volume de entregas que a equipe consegue revisar e concluir.</span></p>
+            <p class="dim-example"><span class="pro">A Funcionária Agêntica trabalha em conjunto com o profissional, aumentando a capacidade de produzir mais entregas, com qualidade, padronização e menor esforço operacional.</span><span class="biz">Um departamento pode aumentar o volume de entregas que a equipe consegue revisar e concluir.</span></p>
           </details>
           <details class="dim" name="dimensoes" style="--dim:#8A5A2B; --glyph:#F2EEE6">
             <summary>
@@ -218,7 +243,7 @@
               <span class="dim-copy"><span class="dim-name">Temporal</span><span class="dim-line">Ampliar a disponibilidade para realizar trabalhos.</span></span>
               <span class="dim-more"></span>
             </summary>
-            <p class="dim-example"><span class="pro">Trabalho que não depende da sua hora pode seguir, dentro dos limites que você definiu, enquanto você está em outra atividade.</span><span class="biz">Demandas que não exigem presença contínua encontram capacidade disponível no processo, com supervisão.</span></p>
+            <p class="dim-example"><span class="pro">A Funcionária Agêntica pode executar trabalhos em diferentes horários, inclusive enquanto o profissional realiza outras atividades, garantindo maior continuidade operacional dentro dos limites estabelecidos.</span><span class="biz">Demandas que não exigem presença contínua encontram capacidade disponível no processo, com supervisão.</span></p>
           </details>
           <details class="dim" name="dimensoes" style="--dim:#5C4033; --glyph:#F2EEE6">
             <summary>
@@ -226,7 +251,7 @@
               <span class="dim-copy"><span class="dim-name">Coordenação</span><span class="dim-line">Ampliar a organização e a integração do trabalho.</span></span>
               <span class="dim-more"></span>
             </summary>
-            <p class="dim-example"><span class="pro">Ela organiza fila, prazo e o que está com cada capacidade especializada.</span><span class="biz">Os fluxos entre pessoas e Funcionários Agênticos ficam visíveis: o que entra, quem faz e o que pede supervisão.</span></p>
+            <p class="dim-example"><span class="pro">A Funcionária Agêntica organiza demandas, distribui responsabilidades, acompanha prazos e coordena a execução entre profissionais e Funcionários Agênticos, mantendo o trabalho integrado e alinhado aos objetivos.</span><span class="biz">Os fluxos entre pessoas e Funcionários Agênticos ficam visíveis: o que entra, quem faz e o que pede supervisão.</span></p>
           </details>
           <details class="dim" name="dimensoes" style="--dim:#E0B089; --glyph:#171717">
             <summary>
@@ -234,7 +259,7 @@
               <span class="dim-copy"><span class="dim-name">Especialização</span><span class="dim-line">Incorporar conhecimentos e capacidades especializadas.</span></span>
               <span class="dim-more"></span>
             </summary>
-            <p class="dim-example"><span class="pro">Você passa a contar com um conhecimento especializado parametrizado para a sua função, sem precisar dominá-lo por inteiro.</span><span class="biz">Um departamento incorpora um conhecimento especializado parametrizado, sem depender de uma única pessoa.</span></p>
+            <p class="dim-example"><span class="pro">A Funcionária Agêntica incorpora conhecimentos, métodos e habilidades especializadas, permitindo ao profissional acessar novas competências e realizar trabalhos que antes dependiam de especialistas.</span><span class="biz">Um departamento incorpora um conhecimento especializado parametrizado, sem depender de uma única pessoa.</span></p>
           </details>
           <details class="dim" name="dimensoes" style="--dim:#3A322C; --glyph:#F2EEE6">
             <summary>
@@ -242,7 +267,7 @@
               <span class="dim-copy"><span class="dim-name">Estratégica</span><span class="dim-line">Ampliar planejamento e apoio à decisão.</span></span>
               <span class="dim-more"></span>
             </summary>
-            <p class="dim-example"><span class="pro">Ela organiza opções, critérios e consequências. A decisão continua sua.</span><span class="biz">A gestão recebe cenários e trade-offs preparados para a decisão do negócio.</span></p>
+            <p class="dim-example"><span class="pro">Ela demonstra que a Funcionária Agêntica não apenas organiza informações, mas pode atuar como uma capacidade estratégica incorporada à força de trabalho, contribuindo para o planejamento e a avaliação de decisões.</span><span class="biz">A gestão recebe cenários e trade-offs preparados para a decisão do negócio.</span></p>
           </details>
           <details class="dim" name="dimensoes" style="--dim:#F0A06A; --glyph:#171717">
             <summary>
@@ -250,7 +275,7 @@
               <span class="dim-copy"><span class="dim-name">Inovação</span><span class="dim-line">Ampliar experimentação e criação de novas soluções.</span></span>
               <span class="dim-more"></span>
             </summary>
-            <p class="dim-example"><span class="pro">Você experimenta uma oferta ou um jeito novo de entregar, num recorte pequeno, antes de ampliar.</span><span class="biz">A organização testa um processo novo num recorte, valida e só então amplia.</span></p>
+            <p class="dim-example"><span class="pro">A Funcionária Agêntica identifica oportunidades, propõe ideias, desenvolve alternativas e apoia a experimentação de novas soluções, permitindo ao profissional inovar com mais agilidade e menor esforço.</span><span class="biz">A organização testa um processo novo num recorte, valida e só então amplia.</span></p>
           </details>
         </div>
       </div>
@@ -260,176 +285,108 @@
       <div class="container">
         <p class="kicker kicker-on-dark">03 / Ganhos</p>
         <h2 id="titulo-ganhos">Mais capacidade para trabalhar. Mais possibilidades para prosperar.</h2>
-        <p class="lead lead-narrow">Ampliar suas capacidades pode transformar não apenas a maneira como você trabalha, mas também suas oportunidades, resultados e qualidade de vida.</p>
-        <ol class="gains">
-          <li>
-            <span class="level-num">01</span>
-            <div>
-              <h3><span class="pro">Maior autonomia profissional</span><span class="biz">Maior capacidade operacional</span></h3>
-              <p><span class="pro">Realize trabalhos mais complexos com menos dependência de apoio operacional.</span><span class="biz">Funcionários Agênticos entram nos processos e departamentos. A operação passa a executar mais frentes, com função, contexto, limites e supervisão.</span></p>
-            </div>
-          </li>
-          <li>
-            <span class="level-num">02</span>
-            <div>
-              <h3><span class="pro">Maior potencial de geração de renda</span><span class="biz">Maior potencial de crescimento e faturamento</span></h3>
-              <p><span class="pro">Amplie sua capacidade de atender clientes, assumir projetos maiores e desenvolver novos serviços, conforme a demanda e seu modelo de remuneração.</span><span class="biz">Mais capacidade de atender demanda e sustentar entregas pode abrir espaço para crescer, conforme o mercado e o modelo do negócio.</span></p>
-            </div>
-          </li>
-          <li>
-            <span class="level-num">03</span>
-            <div>
-              <h3><span class="pro">Maior competitividade</span><span class="biz">Maior competitividade empresarial</span></h3>
-              <p><span class="pro">Desenvolva condições para oferecer entregas mais completas, ágeis e consistentes.</span><span class="biz">A empresa desenvolve condições para responder com entregas mais completas, ágeis e consistentes.</span></p>
-            </div>
-          </li>
-          <li>
-            <span class="level-num">04</span>
-            <div>
-              <h3><span class="pro">Maior valorização profissional</span><span class="biz">Maior capacidade de gestão e liderança</span></h3>
-              <p><span class="pro">Amplie sua contribuição, passando da execução individual à capacidade de organizar, delegar e supervisionar trabalhos.</span><span class="biz">A liderança passa a organizar, delegar e supervisionar profissionais e Funcionários Agênticos, em vez de concentrar a execução.</span></p>
-            </div>
-          </li>
-          <li>
-            <span class="level-num">05</span>
-            <div>
-              <h3><span class="pro">Melhor qualidade de vida</span><span class="biz">Maior eficiência e sustentabilidade operacional</span></h3>
-              <p><span class="pro">Crie oportunidades para reduzir a sobrecarga operacional e dedicar mais tempo ao que realmente importa.</span><span class="biz">A arquitetura do trabalho pode aliviar a sobrecarga da operação e sustentar responsabilidades mais claras entre pessoas e Funcionários Agênticos.</span></p>
-            </div>
-          </li>
-        </ol>
+        <div class="gain-board">
+          <div class="gain-group">
+            <p class="journey-kicker">Mais capacidade para trabalhar</p>
+            <ol class="gains">
+              <li>
+                <h3><span class="pro">Maior autonomia profissional</span><span class="biz">Maior capacidade operacional</span><span class="lid">Maior capacidade de orientar</span></h3>
+                <p><span class="pro">Realize trabalhos mais complexos com menos dependência de apoio operacional.</span><span class="biz">A operação executa mais frentes, com função, contexto, limites e supervisão.</span><span class="lid">Oriente profissionais e Funcionários Agênticos com contexto, prioridades e critérios.</span></p>
+              </li>
+              <li>
+                <h3><span class="pro">Maior competitividade</span><span class="biz">Maior competitividade empresarial</span><span class="lid">Maior capacidade de coordenar</span></h3>
+                <p><span class="pro">Entregue com mais qualidade, agilidade e consistência.</span><span class="biz">A empresa responde com entregas mais completas, ágeis e consistentes.</span><span class="lid">Mantenha frentes, prazos e responsabilidades alinhados na equipe.</span></p>
+              </li>
+              <li>
+                <h3><span class="pro">Maior valorização profissional</span><span class="biz">Maior capacidade de gestão e liderança</span><span class="lid">Maior capacidade de governar</span></h3>
+                <p><span class="pro">Passe a delegar, supervisionar e liderar trabalhos feitos com Funcionários Agênticos.</span><span class="biz">Organize, delegue e supervisione profissionais e Funcionários Agênticos.</span><span class="lid">Defina limites, permissões e a supervisão da força de trabalho.</span></p>
+              </li>
+            </ol>
+          </div>
+          <div class="gain-group">
+            <p class="journey-kicker">Mais possibilidades para prosperar</p>
+            <ol class="gains">
+              <li>
+                <h3><span class="pro">Maior potencial de geração de renda</span><span class="biz">Maior potencial de crescimento e faturamento</span><span class="lid">Mais espaço para decidir</span></h3>
+                <p><span class="pro">Atender mais clientes e oferecer serviços de maior valor pode abrir espaço para ampliar seus ganhos.</span><span class="biz">Mais capacidade de atender demanda pode abrir espaço para crescer, conforme o mercado e o modelo do negócio.</span><span class="lid">Menos execução concentrada no líder pode abrir tempo para a decisão.</span></p>
+              </li>
+              <li>
+                <h3><span class="pro">Melhor qualidade de vida</span><span class="biz">Maior eficiência e sustentabilidade operacional</span><span class="lid">Menos dependência da sua execução</span></h3>
+                <p><span class="pro">Menos tempo em tarefas operacionais pode abrir espaço para a família, o desenvolvimento e o que importa.</span><span class="biz">A arquitetura do trabalho pode aliviar a sobrecarga e deixar responsabilidades mais claras.</span><span class="lid">Responsabilidades mais claras podem reduzir a dependência da execução individual do líder.</span></p>
+              </li>
+            </ol>
+          </div>
+        </div>
         <a class="btn btn-solid" href="#conversa">
           <span class="pro">Quero ampliar minhas capacidades</span>
           <span class="biz">Quero transformar meu negócio</span>
+          <span class="lid">Quero ampliar minha liderança</span>
         </a>
-      </div>
-    </section>
-
-    <section class="band band-paper" id="experiencia" aria-labelledby="titulo-experiencia">
-      <div class="container">
-        <p class="index">04 / Experiência</p>
-        <h2 id="titulo-experiencia">Uma experiência diferente de aprender e transformar o trabalho.</h2>
-        <p class="body body-intro">Aqui, você não aprende primeiro para aplicar depois. Você descobre os fundamentos quando precisa deles e os aplica em experiências que representam a realidade do trabalho.</p>
-        <p class="method-sign">Na IA PhD, o trabalho apresenta o desafio, o fundamento aparece quando necessário e o conhecimento é aplicado para transformar a maneira de trabalhar.</p>
-        <figure class="simbiose">
-          <div class="simbiose-pair">
-            <img src="midia/simbiose-profissional.png" alt="Profissional humano, de braços abertos." width="768" height="1024">
-            <img src="midia/simbiose-funcionaria.png" alt="Funcionária Agêntica da IA PhD." width="768" height="1024">
-          </div>
-          <figcaption><span>A simbiose</span>Profissional humano e Funcionária Agêntica no mesmo trabalho.</figcaption>
-        </figure>
-        <figure class="ambiente">
-          <img src="midia/sala-imersiva.png" alt="Ambiente imersivo da IA PhD, com o profissional e a Funcionária Agêntica na sala." width="808" height="476">
-          <figcaption>Plataforma imersiva. Um ambiente de trabalho para explorar, decidir e experimentar.</figcaption>
-        </figure>
-        <ol class="pillars">
-          <li>
-            <span class="level-num">01</span>
-            <div>
-              <h3>Ambiente imersivo</h3>
-              <p>Aprenda interagindo com ambientes e situações reais de trabalho.</p>
-            </div>
-          </li>
-          <li>
-            <span class="level-num">02</span>
-            <div>
-              <h3>Didática contextualizada</h3>
-              <p>Os fundamentos aparecem quando o trabalho exige sua compreensão.</p>
-            </div>
-          </li>
-          <li>
-            <span class="level-num">03</span>
-            <div>
-              <h3>Protocolo Gênesis</h3>
-              <p>Evolução conjunta do profissional e de sua Funcionária Agêntica.</p>
-            </div>
-          </li>
-          <li>
-            <span class="level-num">04</span>
-            <div>
-              <h3>Comunidade IA PhD</h3>
-              <p>Materiais, vídeos, podcasts, atualizações e conexões.</p>
-            </div>
-          </li>
-        </ol>
-        <p class="body">A Comunidade Aberta é acesso e relacionamento. A Continuous Academy é a continuidade estruturada de quem já entrou.</p>
       </div>
     </section>
 
     <section class="band band-paper" id="mapa" aria-labelledby="titulo-mapa">
       <div class="container">
-        <p class="index">05 / Jornadas</p>
+        <p class="index">04 / Jornadas</p>
         <h2 id="titulo-mapa">
           <span class="pro">As jornadas IA PhD</span>
           <span class="biz">O percurso de Negócios</span>
         </h2>
-        <p class="journey-names pro">Core · Practitioner · Builder · Architect · Leader</p>
+        <p class="journey-names pro">Base Agêntica · Especializações</p>
         <p class="body body-intro">
-          <span class="pro">Core e Practitioner formam a base — Agentic Practitioner. Builder, Architect e Leader são especializações. Nenhuma delas é obrigatória.</span>
-          <span class="biz">São os movimentos da transformação na organização. A conversa define por onde começar. Na formação das equipes, Builder, Architect e Leader fazem parte do percurso.</span>
+          <span class="pro">Uma base para transformar sua maneira de trabalhar. Especializações para ampliar suas possibilidades.</span>
+          <span class="biz">São os movimentos da transformação na organização. O primeiro passo é a Imersão Agentic Core e o Practitioner. Na formação das equipes, Builder, Architect e Leader fazem parte do percurso.</span>
         </p>
+        <p class="body pro">As jornadas IA PhD desenvolvem profissionais preparados para incorporar, trabalhar, construir e liderar Funcionários Agênticos.</p>
         <div class="pro">
-          <div class="journey">
-            <div class="journey-base">
-              <p class="journey-kicker">Base</p>
-              <ol class="map map-base">
-                <li>
-                  <a class="map-go map-open" href="immersion/">
-                    <span class="num">01</span>
-                    <span>
-                      <p class="journey-code">Core</p>
-                      <h3>Núcleo Agêntico</h3>
-                      <p>Descubra a Era Agêntica e compreenda a transformação do trabalho.</p>
-                      <span class="open-flag">Maceió · 05 de Dezembro</span>
-                      <span class="map-more">Ver a explicação</span>
-                    </span>
-                  </a>
-                </li>
-                <li>
-                  <a class="map-go" href="practitioner/">
-                    <span class="num">02</span>
-                    <span>
-                      <p class="journey-code">Practitioner</p>
-                      <h3>Agentic Practitioner</h3>
-                      <p>Desenvolva as habilidades para incorporar, preparar e trabalhar com Funcionários Agênticos.</p>
-                      <span class="map-more">Ver a explicação</span>
-                    </span>
-                  </a>
-                </li>
-              </ol>
+          <div class="track track-base">
+            <div class="track-head">
+              <p class="journey-kicker">Base Agêntica</p>
+              <p class="track-mark">Fundamental</p>
+              <h3>O início de uma nova maneira de trabalhar.</h3>
+              <p>Duas jornadas complementares que desenvolvem a mentalidade, as habilidades e as capacidades necessárias para atuar com Funcionários Agênticos.</p>
             </div>
-            <div class="journey-fork">
-              <p class="journey-kicker">Especializações</p>
-              <p class="journey-note">Três caminhos possíveis. Você escolhe se, e quando, seguir algum deles.</p>
-              <ol class="map map-dest">
-                <li>
-                  <span class="node" aria-hidden="true"></span>
-                  <span class="num">03</span>
-                  <div>
-                    <p class="journey-code">Builder</p>
-                    <h3>Agent Builder</h3>
-                    <p>Construa e amplie capacidades agênticas, ferramentas e integrações.</p>
-                  </div>
-                </li>
-                <li>
-                  <span class="node" aria-hidden="true"></span>
-                  <span class="num">04</span>
-                  <div>
-                    <p class="journey-code">Architect</p>
-                    <h3>Agentic Work Architect</h3>
-                    <p>Desenhe e engenhe arquiteturas de trabalho com profissionais e Funcionários Agênticos.</p>
-                  </div>
-                </li>
-                <li>
-                  <span class="node" aria-hidden="true"></span>
-                  <span class="num">05</span>
-                  <div>
-                    <p class="journey-code">Leader</p>
-                    <h3>Agentic Leader</h3>
-                    <p>Lidere e governe uma força de trabalho híbrida.</p>
-                  </div>
-                </li>
-              </ol>
+            <div class="track-cards track-cards-base">
+              <a class="track-card track-card-core" href="imersao/">
+                <p class="journey-code">01 / Core · Descobrir e iniciar</p>
+                <h3>Dê vida à sua primeira Funcionária Agêntica.</h3>
+                <p>Compreenda a nova arquitetura do trabalho, prepare seu ambiente e inicie a evolução conjunta do profissional e de sua Funcionária Agêntica.</p>
+                <span class="open-flag">Maceió · 05 de dezembro</span>
+                <span class="map-more">Ver a imersão</span>
+              </a>
+              <a class="track-card track-card-practice" href="practitioner/">
+                <p class="journey-code">02 / Practitioner · Trabalhar e evoluir</p>
+                <h3>Aprenda a trabalhar, delegar e liderar sua Funcionária Agêntica.</h3>
+                <p>Desenvolva as habilidades para parametrizar, orientar, delegar, supervisionar e integrar Funcionários Agênticos à sua rotina profissional.</p>
+                <span class="map-more">Ver a explicação</span>
+              </a>
+            </div>
+          </div>
+          <div class="track track-spec">
+            <div class="track-head">
+              <p class="journey-kicker">Especializações Agênticas</p>
+              <h3>Escolha como deseja ampliar suas capacidades.</h3>
+              <p>Após desenvolver sua base agêntica, você poderá aprofundar suas competências em uma ou mais especializações, de acordo com seus objetivos profissionais.</p>
+            </div>
+            <div class="track-cards track-cards-spec">
+              <article class="spec-card">
+                <p class="journey-code">03</p>
+                <h3>Builder</h3>
+                <p class="spec-verb">Construir</p>
+                <p>Desenvolva Funcionários Agênticos, configure ferramentas e integre novas capacidades aos ambientes de trabalho.</p>
+              </article>
+              <article class="spec-card">
+                <p class="journey-code">04</p>
+                <h3>Architect</h3>
+                <p class="spec-verb">Engenhar</p>
+                <p>Redesenhe processos, responsabilidades e fluxos, integrando profissionais e Funcionários Agênticos.</p>
+              </article>
+              <article class="spec-card">
+                <p class="journey-code">05</p>
+                <h3>Leader</h3>
+                <p class="spec-verb">Liderar</p>
+                <p>Desenvolva capacidades de liderança, coordenação, supervisão e governança de profissionais e Funcionários Agênticos.</p>
+              </article>
             </div>
           </div>
           <div class="along">
@@ -446,10 +403,17 @@
           </div>
         </div>
         <div class="biz">
+          <a class="track-card track-card-core biz-first" href="imersao/">
+            <p class="journey-code">01 / Primeiro passo</p>
+            <h3>Imersão Agentic Core e Practitioner</h3>
+            <p>A base para começar. A edição aberta é a Imersão Agentic Core, presencial em Maceió, em 5 de dezembro de 2026. O Practitioner é a continuidade dessa base, no trabalho com a Funcionária Agêntica.</p>
+            <span class="open-flag">Maceió · 05 de dezembro</span>
+            <span class="map-more">Ver a imersão</span>
+          </a>
           <ol class="map">
             <li>
               <span class="node" aria-hidden="true"></span>
-              <span class="num">01</span>
+              <span class="num">02</span>
               <div>
                 <h3>Diagnóstico de Maturidade Agêntica</h3>
                 <p>Identifique oportunidades, limitações e prioridades de transformação.</p>
@@ -457,7 +421,7 @@
             </li>
             <li>
               <span class="node" aria-hidden="true"></span>
-              <span class="num">02</span>
+              <span class="num">03</span>
               <div>
                 <h3>Estratégia de Transformação Agêntica</h3>
                 <p>Defina a visão, o planejamento e a arquitetura futura do trabalho.</p>
@@ -465,7 +429,7 @@
             </li>
             <li>
               <span class="node" aria-hidden="true"></span>
-              <span class="num">03</span>
+              <span class="num">04</span>
               <div>
                 <h3>Implantação de Funcionários Agênticos</h3>
                 <p>Crie, parametrize e incorpore capacidades agênticas ao negócio.</p>
@@ -473,7 +437,7 @@
             </li>
             <li>
               <span class="node" aria-hidden="true"></span>
-              <span class="num">04</span>
+              <span class="num">05</span>
               <div>
                 <h3>Arquitetura de Trabalho Agêntico</h3>
                 <p>Redesenhe fluxos, responsabilidades e a colaboração entre profissionais e Funcionários Agênticos.</p>
@@ -481,15 +445,15 @@
             </li>
             <li>
               <span class="node" aria-hidden="true"></span>
-              <span class="num">05</span>
+              <span class="num">06</span>
               <div>
                 <h3>Organização Agêntica</h3>
                 <p>Desenvolva coordenação, liderança e governança da força de trabalho híbrida.</p>
               </div>
             </li>
             <li>
-              <span class="node node-hot" aria-hidden="true"></span>
-              <span class="num">06</span>
+              <span class="node" aria-hidden="true"></span>
+              <span class="num">07</span>
               <div>
                 <h3>Acompanhamento e Evolução</h3>
                 <p>Sustente a melhoria contínua das capacidades implantadas.</p>
@@ -497,164 +461,15 @@
             </li>
           </ol>
         </div>
-        <div class="doors">
-          <p class="index">Portas de entrada</p>
-          <h2>Outras formas de começar</h2>
-          <ul class="door-list">
-            <li>
-              <h3>Workshop Agêntico On-line</h3>
-              <p>Experiência introdutória. Desperta o interesse e conduz à Imersão.</p>
-            </li>
-            <li>
-              <h3>Imersões especializadas</h3>
-              <p>05 de dezembro, em Maceió. Presencial e aberta a diferentes profissões. Um encontro presencial e dois encontros on-line.</p>
-              <a class="text-link door-link" href="imersao/">Ver a imersão</a>
-            </li>
-            <li>
-              <h3>Imersão In Company</h3>
-              <p>A jornada com equipes de organizações públicas e privadas.</p>
-            </li>
-            <li>
-              <h3>Mentoria Executiva Agêntica</h3>
-              <p>Acompanhamento para desenvolver capacidades e a estratégia agêntica.</p>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="band band-dark" id="destino" aria-labelledby="titulo-destino">
-      <div class="container">
-        <div class="destiny">
-          <svg class="destiny-mark" viewBox="0 0 140.4 140.4" aria-hidden="true">
-            <rect x="0" y="90" width="50.4" height="50.4" rx="12.6" fill="#F2EEE6"/>
-            <rect x="45" y="45" width="50.4" height="50.4" rx="12.6" fill="#F2EEE6"/>
-            <rect x="90" y="0" width="50.4" height="50.4" rx="12.6" fill="#F0783C"/>
-          </svg>
-          <div>
-            <p class="kicker kicker-on-dark">
-              <span class="pro">06 / Destino</span>
-              <span class="biz">06 / Destino</span>
-            </p>
-            <h2 id="titulo-destino">
-              <span class="pro">De sua primeira Funcionária Agêntica à sua Chief of Staff Agêntica.</span>
-              <span class="biz">Sua Organização Agêntica</span>
-            </h2>
-            <p class="lead">
-              <span class="pro partner-line">Sua parceira de evolução na Era Agêntica.</span>
-              <span class="biz">Uma organização que integra profissionais, Funcionários Agênticos, processos, departamentos e estruturas de coordenação e governança — com função, contexto, limites e supervisão.</span>
-            </p>
-          </div>
-        </div>
-
-        <div class="pro">
-          <div class="partner">
-            <p>Uma Funcionária Agêntica que evolui com você ao longo das jornadas da IA PhD, incorporando conhecimentos, habilidades, ferramentas e responsabilidades.</p>
-            <p>Ela apoia o seu desenvolvimento, ajuda você a experimentar novas formas de trabalhar e evolui até se tornar sua Chief of Staff Agêntica, capaz de criar e parametrizar novas capacidades quando autorizada, e de coordenar, distribuir, acompanhar e consolidar o trabalho de Funcionários Agênticos especializados, sob a sua liderança e supervisão.</p>
-            <p class="partner-diff"><span class="mod mod-hot" aria-hidden="true"></span>A grande diferença: ela evolui e ajuda você a evoluir.</p>
-
-            <ol class="pair">
-              <li>
-                <span class="level-num">01</span>
-                <p class="pair-stage">Immersion</p>
-                <div class="pair-side">
-                  <p class="pair-who">Profissional</p>
-                  <p>Descobre a Era Agêntica.</p>
-                </div>
-                <div class="pair-side">
-                  <p class="pair-who">Funcionária Agêntica</p>
-                  <p>Acompanha a descoberta e ajuda a compreender a nova realidade do trabalho.</p>
-                </div>
-              </li>
-              <li>
-                <span class="level-num">02</span>
-                <p class="pair-stage">Agentic Practitioner</p>
-                <div class="pair-side">
-                  <p class="pair-who">Profissional</p>
-                  <p>Aprende a trabalhar com Funcionários Agênticos.</p>
-                </div>
-                <div class="pair-side">
-                  <p class="pair-who">Funcionária Agêntica</p>
-                  <p>É parametrizada, treinada e começa a assumir trabalhos.</p>
-                </div>
-              </li>
-              <li>
-                <span class="level-num">03</span>
-                <p class="pair-stage">Agent Builder</p>
-                <div class="pair-side">
-                  <p class="pair-who">Profissional</p>
-                  <p>Aprende a construir novas capacidades.</p>
-                </div>
-                <div class="pair-side">
-                  <p class="pair-who">Funcionária Agêntica</p>
-                  <p>Apoia a construção e amplia as próprias habilidades e ferramentas.</p>
-                </div>
-              </li>
-              <li>
-                <span class="level-num">04</span>
-                <p class="pair-stage">Agentic Work Architect</p>
-                <div class="pair-side">
-                  <p class="pair-who">Profissional</p>
-                  <p>Aprende a arquitetar o trabalho.</p>
-                </div>
-                <div class="pair-side">
-                  <p class="pair-who">Funcionária Agêntica</p>
-                  <p>Ajuda a estruturar fluxos e coordenar capacidades especializadas.</p>
-                </div>
-              </li>
-              <li>
-                <span class="level-num">05</span>
-                <p class="pair-stage">Agentic Leader</p>
-                <div class="pair-side">
-                  <p class="pair-who">Profissional</p>
-                  <p>Desenvolve liderança e governança.</p>
-                </div>
-                <div class="pair-side">
-                  <p class="pair-who">Funcionária Agêntica</p>
-                  <p>Atua como Chief of Staff Agêntica, coordenando a força de trabalho.</p>
-                </div>
-              </li>
-            </ol>
-
-            <div class="cycle">
-              <h3>O papel do Protocolo Gênesis</h3>
-              <p>Ele não apenas registra a evolução. Conecta três movimentos e faz os dois protagonistas avançarem juntos.</p>
-              <ol class="cycle-steps">
-                <li>
-                  <span class="level-num">01</span>
-                  <p>O profissional desenvolve novas competências.</p>
-                </li>
-                <li>
-                  <span class="level-num">02</span>
-                  <p>Sua Funcionária Agêntica incorpora novas capacidades.</p>
-                </li>
-                <li>
-                  <span class="level-num">03</span>
-                  <p>Ela usa essas capacidades para apoiar você na jornada seguinte.</p>
-                </li>
-              </ol>
-              <p class="cycle-note">A Chief of Staff não ganha autonomia nem permissões automaticamente. Cada responsabilidade nova é configurada, testada e validada.</p>
-            </div>
-
-            <article class="vow">
-              <p>Na IA PhD, você não evolui sozinho. Sua Funcionária Agêntica evolui com você e ajuda você a evoluir.</p>
-              <p class="vow-aside">O destino é prosperar na Era Agêntica, com uma força de trabalho que amplia continuamente as suas capacidades.</p>
-            </article>
-          </div>
-        </div>
       </div>
     </section>
 
     <section class="band band-dark close" id="conversa" aria-labelledby="titulo-conversa">
       <div class="container close-grid">
         <div>
-          <p class="kicker kicker-on-dark">07 / Convite</p>
-          <h2 id="titulo-conversa">O futuro do trabalho começa com uma decisão.</h2>
-          <p class="lead">Desenvolva as capacidades necessárias para trabalhar e gerar valor na Era Agêntica.</p>
-          <p class="fine">
-            <span class="pro">Formato, data e investimento da Imersão são confirmados nesta conversa.</span>
-            <span class="biz">O próximo movimento é definido a partir do contexto do seu negócio.</span>
-          </p>
+          <p class="kicker kicker-on-dark">05 / Convite</p>
+          <h2 id="titulo-conversa">O futuro do trabalho e dos Negócios começa com uma decisão.</h2>
+          <p class="fine biz">O próximo movimento é definido a partir do contexto do seu negócio.</p>
           <aside class="ceo">
             <img src="midia/bruno-bessa.jpg" alt="Bruno Bessa, Founder e CEO da IA PhD." width="575" height="1024">
             <div>
@@ -668,125 +483,154 @@
             </div>
           </aside>
         </div>
-
-        <form class="card" id="form-conversa" novalidate>
-          <h3 class="card-title">Fale com a IA PhD</h3>
-          <p class="card-lead">
-            <span class="pro">Inscrição de interesse na Imersão.</span>
-            <span class="biz">Pedido de diagnóstico ou conversa estratégica.</span>
-          </p>
-
-          <div class="field">
-            <label for="nome">Nome</label>
-            <input id="nome" name="nome" type="text" autocomplete="name" required>
-            <p class="error" id="erro-nome" hidden></p>
-          </div>
-          <div class="field">
-            <label for="email">E-mail</label>
-            <input id="email" name="email" type="email" autocomplete="email" inputmode="email" required>
-            <p class="error" id="erro-email" hidden></p>
-          </div>
-          <div class="field">
-            <label for="telefone">WhatsApp</label>
-            <input id="telefone" name="telefone" type="tel" autocomplete="tel" inputmode="tel" required>
-            <p class="error" id="erro-telefone" hidden></p>
-          </div>
-          <div class="field">
-            <label for="organizacao">Empresa ou organização <span class="optional">(opcional)</span></label>
-            <input id="organizacao" name="organizacao" type="text" autocomplete="organization">
-          </div>
-          <div class="field">
-            <label for="funcao">Qual função de trabalho você quer estruturar primeiro? <span class="optional">(opcional)</span></label>
-            <textarea id="funcao" name="funcao" rows="3"></textarea>
-          </div>
-
-          <button class="btn btn-solid btn-block" type="submit">
-            <span class="pro">Quero ampliar minhas capacidades</span>
-            <span class="biz">Quero transformar meu negócio</span>
-          </button>
-          <p class="form-note">Ao enviar, abrimos o WhatsApp da IA PhD com a sua mensagem pronta. Nada é publicado e nenhum pagamento acontece nesta página.</p>
-          <p class="form-status" id="form-status" role="status" hidden></p>
-          <p id="form-fallback" hidden>
-            <a class="text-link" id="wa-link" target="_blank" rel="noopener noreferrer">Abrir a conversa no WhatsApp</a>
-          </p>
-        </form>
       </div>
     </section>
 
     <section class="band band-paper" id="faq" aria-labelledby="titulo-faq">
       <div class="container narrow">
-        <p class="index">Dúvidas rápidas</p>
-        <h2 id="titulo-faq">Perguntas frequentes</h2>
+        <p class="index">IA PhD</p>
+        <h2 id="titulo-faq">Perguntas frequentes — IA PhD</h2>
         <div class="faqs">
           <details open>
-            <summary>
-              <span>O que é a IA PhD?</span>
-              <span class="plus" aria-hidden="true"></span>
-            </summary>
-            <p>É quem engenha a nova arquitetura do trabalho. A IA PhD prepara profissionais e organizações para trabalhar com Funcionários Agênticos: pessoas que preparam, delegam e supervisionam uma força de trabalho, e seguem responsáveis pelo resultado.</p>
+            <summary><span><span class="faq-num">01</span>Preciso saber programar?</span><span class="plus" aria-hidden="true"></span></summary>
+            <p>Não! A Imersão IA PhD foi desenvolvida para profissionais de diferentes áreas, mesmo sem conhecimento em programação.</p>
+            <p>Você aprenderá a preparar seu ambiente, parametrizar sua primeira Funcionária Agêntica e começar a trabalhar com ela, utilizando ferramentas e orientações práticas.</p>
+            <p>Mais importante do que saber programar é aprender a orientar, delegar, supervisionar e trabalhar com Funcionários Agênticos.</p>
           </details>
           <details>
-            <summary>
-              <span>O que são Funcionários Agênticos?</span>
-              <span class="plus" aria-hidden="true"></span>
-            </summary>
-            <p>São funções de trabalho com contexto, limites e supervisão humana. Executam tarefas definidas. Não substituem a pessoa responsável pela decisão e pelo resultado.</p>
-          </details>
-          <details class="faq-key">
-            <summary>
-              <span><span class="faq-cue">Posso começar</span>Preciso saber programar ou ter conhecimento técnico?</span>
-              <span class="plus" aria-hidden="true"></span>
-            </summary>
-            <p>Não. Você começa pela função, pelo resultado e pelo contexto do seu trabalho. O percurso ensina a preparar, parametrizar, delegar e supervisionar um Funcionário Agêntico. Programar não é pré-requisito.</p>
-          </details>
-          <details class="faq-key">
-            <summary>
-              <span><span class="faq-cue">Por onde começo</span>Qual é a diferença entre Core e Practitioner?</span>
-              <span class="plus" aria-hidden="true"></span>
-            </summary>
-            <p>Core, a Immersion, é o começo: você compreende a transformação do trabalho. Practitioner, o Agentic Practitioner, é o passo seguinte da base: você desenvolve as habilidades para incorporar, preparar e trabalhar com Funcionários Agênticos. Builder, Architect e Leader vêm depois. Para o profissional, são especializações opcionais. Na formação de equipes, fazem parte do percurso.</p>
-          </details>
-          <details class="faq-key">
-            <summary>
-              <span><span class="faq-cue">Até onde evoluo</span>O que é uma Chief of Staff Agêntica?</span>
-              <span class="plus" aria-hidden="true"></span>
-            </summary>
-            <p>É o estágio em que sua Funcionária Agêntica coordena a força de trabalho com você. Ela só cria ou parametriza o que você autorizar. Cada responsabilidade nova é configurada, testada e validada. O caminho começa na primeira Funcionária Agêntica e pode chegar até esse papel.</p>
+            <summary><span><span class="faq-num">02</span>Para quais profissões a Imersão é indicada?</span><span class="plus" aria-hidden="true"></span></summary>
+            <p>A Imersão IA PhD é indicada para profissionais de todas as áreas, incluindo empresários, gestores, líderes, empreendedores, autônomos e profissionais dos setores público e privado.</p>
+            <p>Independentemente da profissão, você aprenderá a desenvolver novas habilidades e incorporar Funcionários Agênticos à sua força de trabalho, ampliando suas capacidades e transformando sua maneira de trabalhar.</p>
+            <p>O futuro do trabalho não é exclusivo de uma profissão. É uma nova realidade para todos os profissionais.</p>
           </details>
           <details>
-            <summary>
-              <span>Minha Funcionária Agêntica evolui comigo?</span>
-              <span class="plus" aria-hidden="true"></span>
-            </summary>
-            <p>Sim. Você desenvolve uma competência, ela incorpora a capacidade correspondente e usa essa capacidade para apoiar a etapa seguinte. Nada disso acontece sozinho: cada avanço é preparado e validado. Na IA PhD, você não evolui sozinho.</p>
+            <summary><span><span class="faq-num">03</span>Vou criar minha primeira Funcionária Agêntica?</span><span class="plus" aria-hidden="true"></span></summary>
+            <p>Sim! Durante a Imersão IA PhD, você dará os primeiros passos na criação da sua Funcionária Agêntica, definindo sua identidade, papel, responsabilidades, conhecimentos, habilidades e limites de atuação.</p>
+            <p>Você também aprenderá a orientá-la, delegar tarefas, supervisionar suas atividades e realizar as primeiras experiências práticas.</p>
+            <p>E esse é apenas o começo! Você iniciará uma jornada de evolução conjunta, desenvolvendo suas habilidades profissionais enquanto amplia progressivamente as capacidades da sua Funcionária Agêntica.</p>
           </details>
           <details>
-            <summary>
-              <span>A IA PhD também atende empresários e empresas?</span>
-              <span class="plus" aria-hidden="true"></span>
-            </summary>
-            <p>Sim. Empresários seguem outro percurso na mesma página: dos agentes no negócio ao Negócio Agêntico e, adiante, à Organização Agêntica. O próximo passo é um diagnóstico ou uma conversa estratégica, a partir do contexto da empresa.</p>
+            <summary><span><span class="faq-num">04</span>Preciso levar notebook?</span><span class="plus" aria-hidden="true"></span></summary>
+            <p>Sim! Como a Imersão IA PhD é uma experiência prática, é necessário levar seu próprio notebook.</p>
+            <p>Durante a Imersão, você utilizará o IA PhD Education, nossa plataforma tecnológica imersiva, para realizar experimentações e dar os primeiros passos na criação e parametrização da sua Funcionária Agêntica.</p>
+            <p>Você não vai apenas assistir. Vai aprender, experimentar e colocar a mão na massa!</p>
           </details>
           <details>
-            <summary>
-              <span>Como funciona a metodologia de aprendizagem?</span>
-              <span class="plus" aria-hidden="true"></span>
-            </summary>
-            <p>O trabalho apresenta o desafio. O fundamento aparece quando é necessário. O conhecimento é aplicado em ambientes e situações de trabalho. Quatro apoios sustentam essa experiência: ambiente imersivo, didática contextualizada, Protocolo Gênesis e Comunidade IA PhD.</p>
+            <summary><span><span class="faq-num">05</span>Preciso contratar ferramentas ou serviços?</span><span class="plus" aria-hidden="true"></span></summary>
+            <p>Na Era dos Funcionários Agênticos, é importante ter acesso a modelos de linguagem (LLMs) com maior capacidade de raciocínio, que geralmente estão disponíveis em planos pagos.</p>
+            <p>Mas existem alternativas para começar a experimentar sem assumir imediatamente todos esses custos.</p>
+            <p>Por exemplo, novos usuários podem verificar a disponibilidade de ofertas promocionais do ChatGPT Plus, quando oferecidas pela OpenAI. Essas condições não são garantidas para todas as contas.</p>
+            <p>Durante a Imersão, você receberá orientações sobre as ferramentas, os acessos necessários e as alternativas para iniciar suas experiências.</p>
+            <p>Nosso objetivo é ajudar você a começar com o menor investimento possível, sem comprometer a experiência de aprendizagem.</p>
           </details>
           <details>
-            <summary>
-              <span>Quais resultados posso alcançar?</span>
-              <span class="plus" aria-hidden="true"></span>
-            </summary>
-            <p>Você pode ampliar a capacidade de realizar trabalhos mais complexos, atender mais demanda e organizar melhor o tempo e a operação. O que se concretiza depende do seu contexto, da demanda e de como o trabalho for preparado e supervisionado.</p>
+            <summary><span><span class="faq-num">06</span>Onde será realizada a Imersão?</span><span class="plus" aria-hidden="true"></span></summary>
+            <p>O primeiro encontro da Imersão IA PhD será realizado presencialmente em Maceió (AL), no dia 5 de dezembro de 2026.</p>
+            <p>O endereço completo será confirmado no momento da inscrição.</p>
+            <p>Após a experiência presencial, você participará de dois encontros on-line, dando continuidade à sua jornada de aprendizagem, experimentação e evolução com o acompanhamento dos IA PhDs.</p>
+            <p>Uma experiência que começa presencialmente e continua on-line para apoiar sua evolução na Era dos Funcionários Agênticos.</p>
           </details>
           <details>
-            <summary>
-              <span>Posso participar da comunidade IA PhD?</span>
-              <span class="plus" aria-hidden="true"></span>
-            </summary>
-            <p>A comunidade reúne materiais, vídeos, podcasts, atualizações e conexões. A Comunidade Aberta é acesso e relacionamento. A Continuous Academy é a continuidade de quem já entrou no percurso. A forma de participar é confirmada na conversa.</p>
+            <summary><span><span class="faq-num">07</span>O que acontece no primeiro encontro presencial e por que ele é tão importante?</span><span class="plus" aria-hidden="true"></span></summary>
+            <p>O primeiro encontro presencial é um dos momentos mais importantes da Imersão IA PhD.</p>
+            <p>Nosso compromisso é ajudar você a compreender a mentalidade da Era dos Funcionários Agênticos e experimentar, na prática, uma nova forma de trabalhar.</p>
+            <p>Por isso, os IA PhDs estarão ao seu lado, oferecendo acompanhamento próximo e orientação individualizada, respeitando o ritmo e as necessidades de cada participante.</p>
+            <p>Queremos pegar na sua mão, ajudar a superar as primeiras dificuldades e acompanhar seus primeiros passos na criação e parametrização da sua Funcionária Agêntica.</p>
+            <p>Você não estará sozinho nessa descoberta. Nosso compromisso é ajudar cada participante a compreender, experimentar e sair do encontro confiante para continuar sua jornada.</p>
+            <p>Conheça todas as atividades do encontro na <a class="text-link" href="imersao/programa/#agenda">programação completa da Imersão</a>.</p>
+          </details>
+          <details>
+            <summary><span><span class="faq-num">08</span>O que acontece nos encontros on-line?</span><span class="plus" aria-hidden="true"></span></summary>
+            <p>Os dois encontros on-line são a continuidade da experiência presencial, permitindo que você avance na sua jornada com o acompanhamento dos IA PhDs.</p>
+            <p>Nesses encontros, vamos compartilhar experiências, esclarecer dúvidas, superar dificuldades e orientar a evolução das suas habilidades profissionais e das capacidades da sua Funcionária Agêntica.</p>
+            <p>Você terá a oportunidade de apresentar suas descobertas, aprender com os desafios de outros participantes e receber orientações para aplicar os conhecimentos à realidade do seu trabalho.</p>
+            <p>Nosso compromisso é que você não apenas comece sua jornada, mas tenha apoio para continuar evoluindo.</p>
+            <p>Porque a Era dos Funcionários Agênticos não se aprende em um único encontro. É uma jornada contínua de aprendizagem, experimentação e evolução.</p>
+          </details>
+          <details>
+            <summary><span><span class="faq-num">09</span>Como funciona a metodologia de aprendizagem?</span><span class="plus" aria-hidden="true"></span></summary>
+            <p>Na IA PhD, você aprende enquanto experimenta, conectando conhecimento, prática e desafios reais do seu trabalho.</p>
+            <p>Nossa metodologia combina experiências imersivas, didática contextualizada, experimentação aplicada e aprendizagem compartilhada.</p>
+            <p>Em vez de apenas assistir a aulas, você participa de experiências práticas, descobre os fundamentos no momento em que precisa aplicá-los e aprende com profissionais de diferentes áreas.</p>
+            <p>Tudo isso com acompanhamento próximo dos IA PhDs e apoio do IA PhD Education, nossa plataforma tecnológica de aprendizagem e evolução.</p>
+            <p>O diferencial é o Protocolo Gênesis: enquanto você desenvolve novas habilidades profissionais, aprende a ampliar progressivamente as capacidades da sua Funcionária Agêntica.</p>
+            <p>Aqui, você não aprende apenas sobre a Era dos Funcionários Agênticos. Você começa a vivê-la, na prática.</p>
+          </details>
+          <details>
+            <summary><span><span class="faq-num">10</span>Quais resultados posso alcançar?</span><span class="plus" aria-hidden="true"></span></summary>
+            <p>Ao concluir a Imersão IA PhD, você poderá dar seus primeiros passos concretos na Era dos Funcionários Agênticos, desenvolvendo uma nova mentalidade sobre o futuro do trabalho.</p>
+            <p>Você terá a oportunidade de:</p>
+            <ul>
+              <li><strong>Desenvolver a mentalidade agêntica:</strong> compreender como profissionais e Funcionários Agênticos podem trabalhar juntos.</li>
+              <li><strong>Preparar seu ambiente tecnológico:</strong> conhecer a infraestrutura necessária para começar sua jornada.</li>
+              <li><strong>Criar sua primeira Funcionária Agêntica:</strong> definir sua identidade, responsabilidades, conhecimentos, habilidades e limites.</li>
+              <li><strong>Realizar experiências práticas:</strong> começar a orientar, delegar e supervisionar atividades.</li>
+              <li><strong>Identificar oportunidades no seu trabalho:</strong> descobrir onde novas capacidades podem ampliar sua produtividade e atuação profissional.</li>
+              <li><strong>Iniciar sua evolução conjunta:</strong> desenvolver suas habilidades enquanto amplia progressivamente as capacidades da sua Funcionária Agêntica.</li>
+            </ul>
+            <p>O principal resultado não é apenas sair com uma Funcionária Agêntica. É começar a se tornar um profissional preparado para trabalhar com uma nova força de trabalho.</p>
+            <p>Os resultados práticos evoluem conforme sua dedicação, suas experimentações e a aplicação dos conhecimentos à realidade do seu trabalho.</p>
+          </details>
+          <details>
+            <summary><span><span class="faq-num">11</span>Minha Funcionária Agêntica evolui comigo?</span><span class="plus" aria-hidden="true"></span></summary>
+            <p>Sim! Esse é um dos grandes diferenciais da metodologia IA PhD.</p>
+            <p>Acreditamos que a evolução deve acontecer simultaneamente: enquanto você desenvolve novas habilidades para orientar, delegar, supervisionar e liderar, sua Funcionária Agêntica pode ampliar seus conhecimentos, ferramentas, habilidades e responsabilidades.</p>
+            <p>Por meio do Protocolo Gênesis, você aprenderá a conduzir essa evolução conjunta, ampliando progressivamente as capacidades da sua Funcionária Agêntica, sempre com autonomia delimitada e supervisão profissional.</p>
+            <p>Você evolui como profissional. Sua Funcionária Agêntica evolui em capacidades. Juntos, vocês constroem uma nova forma de trabalhar.</p>
+            <p>E essa jornada começa na Imersão IA PhD!</p>
+          </details>
+          <details>
+            <summary><span><span class="faq-num">12</span>Terei acesso a materiais e comunidade?</span><span class="plus" aria-hidden="true"></span></summary>
+            <p>Sim! Você terá acesso a materiais de apoio, conteúdos complementares e ao IA PhD Education, nossa plataforma tecnológica imersiva, desenvolvida para acompanhar sua jornada de aprendizagem, experimentação e evolução profissional e agêntica.</p>
+            <p>Você também fará parte da Comunidade IA PhD, um espaço para trocar experiências, compartilhar descobertas, esclarecer dúvidas e se conectar com profissionais de diferentes áreas que estão construindo novas formas de trabalhar com Funcionários Agênticos.</p>
+            <p>A Imersão é o começo da sua jornada, não o fim. Você continuará conectado a um ecossistema de conhecimento, colaboração e evolução na Era dos Funcionários Agênticos.</p>
+          </details>
+          <details>
+            <summary><span><span class="faq-num">13</span>Posso participar da Comunidade IA PhD?</span><span class="plus" aria-hidden="true"></span></summary>
+            <p>Sim! Ao participar da Imersão, você também passa a fazer parte da Comunidade IA PhD.</p>
+            <p>Um espaço de conexão, colaboração e evolução contínua, onde profissionais de diferentes áreas compartilham experiências, descobertas, desafios e aplicações práticas dos Funcionários Agênticos.</p>
+            <p>Na comunidade, você poderá trocar conhecimentos, acompanhar novidades, aprender com experiências reais e ampliar sua rede de relacionamentos profissionais.</p>
+            <p>Porque a evolução na Era dos Funcionários Agênticos não acontece de forma isolada. Evoluímos juntos, compartilhando conhecimentos, experiências e novas possibilidades.</p>
+            <p>A Imersão é o começo. A Comunidade IA PhD mantém você conectado a essa jornada.</p>
+          </details>
+          <details>
+            <summary><span><span class="faq-num">14</span>A Imersão inclui mentoria?</span><span class="plus" aria-hidden="true"></span></summary>
+            <p>A Imersão IA PhD inclui acompanhamento próximo dos IA PhDs durante o encontro presencial e os dois encontros on-line, com orientações práticas, esclarecimento de dúvidas e apoio na criação e evolução da sua primeira Funcionária Agêntica.</p>
+            <p>A mentoria individual não está incluída na inscrição regular, mas poderá ser oferecida como benefício em condições promocionais específicas.</p>
+            <p>Para quem deseja aprofundar sua jornada, a IA PhD também oferece programas de mentoria personalizados, voltados ao desenvolvimento de capacidades profissionais e agênticas e à aplicação prática no trabalho.</p>
+            <p>Nosso compromisso é que você tenha orientação para começar e oportunidades para continuar evoluindo.</p>
+          </details>
+          <details>
+            <summary><span><span class="faq-num">15</span>Preciso continuar no Practitioner?</span><span class="plus" aria-hidden="true"></span></summary>
+            <p>Não! A continuidade no IA PhD Practitioner é uma escolha sua.</p>
+            <p>A Imersão foi desenvolvida para proporcionar uma transformação fundamental: compreender a mentalidade da Era dos Funcionários Agênticos, preparar seu ambiente e dar os primeiros passos na criação e parametrização da sua Funcionária Agêntica.</p>
+            <p>Se desejar avançar, o Practitioner é a próxima jornada, na qual você aprofundará suas habilidades para orientar, delegar, supervisionar e trabalhar de forma mais efetiva com Funcionários Agênticos, ampliando progressivamente suas capacidades.</p>
+            <p>A Imersão é o seu ponto de partida. Até onde você deseja evoluir é uma decisão sua.</p>
+          </details>
+          <details>
+            <summary><span><span class="faq-num">16</span>Vou sair com uma Chief of Staff Agêntica?</span><span class="plus" aria-hidden="true"></span></summary>
+            <p>Ainda não! A Imersão IA PhD é o primeiro passo dessa jornada.</p>
+            <p>Você aprenderá a mentalidade da Era dos Funcionários Agênticos, preparará seu ambiente tecnológico e começará a criar e parametrizar sua primeira Funcionária Agêntica.</p>
+            <p>A Chief of Staff Agêntica representa um estágio mais avançado de evolução, no qual uma Funcionária Agêntica assume responsabilidades de coordenação e orquestração de outros Funcionários Agênticos, respeitando os limites de autonomia e a supervisão profissional.</p>
+            <p>Para chegar lá, será necessário evoluir progressivamente suas habilidades profissionais e as capacidades da sua Funcionária Agêntica.</p>
+            <p>Primeiro, você aprende a trabalhar com uma Funcionária Agêntica. Depois, evolui para liderar uma força de trabalho agêntica.</p>
+            <p>Essa é a jornada que começa na Imersão IA PhD.</p>
+          </details>
+          <details>
+            <summary><span><span class="faq-num">17</span>Existem condições para empresas?</span><span class="plus" aria-hidden="true"></span></summary>
+            <p>Sim! A IA PhD oferece condições corporativas especiais para empresas que desejam inscrever dois ou mais profissionais na mesma Imersão.</p>
+            <p>Os pacotes possuem descontos progressivos, permitindo que a empresa desenvolva sua equipe com um investimento reduzido.</p>
+            <p>Além das condições especiais, a participação conjunta favorece a troca de experiências, o alinhamento da mentalidade agêntica e a identificação de oportunidades para incorporar Funcionários Agênticos à realidade do negócio.</p>
+            <p>Mais do que capacitar profissionais individualmente, é uma oportunidade de começar a preparar sua empresa para uma nova arquitetura de trabalho.</p>
+            <p><a class="text-link" href="#conversa">Entre em contato com nossa equipe</a> e conheça os <a class="text-link" href="imersao/#investimento">pacotes corporativos</a> disponíveis.</p>
+          </details>
+          <details>
+            <summary><span><span class="faq-num">18</span>A IA PhD também atende empresários e empresas?</span><span class="plus" aria-hidden="true"></span></summary>
+            <p>Sim! A IA PhD possui uma jornada específica para empresários e empresas que desejam transformar a maneira como seus negócios operam.</p>
+            <p>Por meio da IA PhD Negócios, ajudamos empresas a identificar oportunidades, incorporar Funcionários Agênticos à força de trabalho e desenvolver uma nova arquitetura de trabalho, integrando profissionais e capacidades agênticas.</p>
+            <p>Essa evolução pode começar com Funcionários Agênticos desempenhando funções específicas, avançar para um Negócio Agêntico e, progressivamente, alcançar uma Organização Agêntica, com processos, departamentos e capacidades integradas.</p>
+            <p>Não se trata apenas de adotar novas tecnologias. Trata-se de repensar como o trabalho é organizado, executado e gera valor para o negócio.</p>
+            <p>O primeiro passo é um diagnóstico ou uma <a class="text-link" href="#conversa">conversa estratégica</a> para compreender a realidade, os desafios e as oportunidades da sua empresa.</p>
           </details>
         </div>
       </div>
@@ -808,6 +652,6 @@
     </div>
   </footer>
 
-  <script src="main.js"></script>
+  <script src="main.js?v=cena-lider"></script>
 </body>
 </html>

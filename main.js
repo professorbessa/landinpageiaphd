@@ -24,7 +24,9 @@
       root.dataset.campanha = "true";
       document.title = perfil === "empresario"
         ? "IA PhD — Para empresários"
-        : "IA PhD — Para profissionais";
+        : perfil === "lider"
+          ? "IA PhD — Para líderes"
+          : "IA PhD — Para profissionais";
     }
   }
 
@@ -32,7 +34,12 @@
     choice.addEventListener("click", function (event) {
       event.preventDefault();
       selectPerfil(choice.dataset.perfil, root.dataset.campanha === "true");
-      var cena = document.getElementById(choice.dataset.perfil === "empresario" ? "cena-negocio" : "cena-profissional");
+      var cenaId = choice.dataset.perfil === "empresario"
+        ? "cena-negocio"
+        : choice.dataset.perfil === "lider"
+          ? "cena-lider"
+          : "cena-profissional";
+      var cena = document.getElementById(cenaId);
       if (cena) cena.scrollIntoView({ behavior: "smooth", block: "nearest" });
     });
   });
@@ -62,8 +69,10 @@
     var oferta = root.dataset.oferta || "";
     if (oferta === "imersao-0512") {
       return {
-        origem: "Olá, IA PhD. Cheguei pela página da Imersão presencial de Maceió.",
-        pedido: "Quero participar da Imersão presencial de Maceió, em 5 de dezembro de 2026."
+        origem: "Olá, IA PhD. Cheguei pela página da Imersão Agentic Core.",
+        pedido: root.dataset.pacote
+          ? "Quero o pacote corporativo da Imersão Agentic Core, presencial em Maceió, em 5 de dezembro de 2026. " + root.dataset.pacote
+          : "Quero garantir minha vaga na Imersão Agentic Core, presencial em Maceió, em 5 de dezembro de 2026. Investimento individual: R$ 750. Pagamento na Hotmart."
       };
     }
     if (oferta === "para-a-empresa") {
@@ -96,7 +105,11 @@
     var copy = offerCopy();
     var lines = [copy.origem];
     if (root.dataset.oferta !== "para-a-empresa") {
-      var perfil = root.dataset.perfil === "empresario" ? "empresário" : "profissional";
+      var perfil = root.dataset.perfil === "empresario"
+        ? "empresário"
+        : root.dataset.perfil === "lider"
+          ? "líder"
+          : "profissional";
       lines.push("Perfil: " + perfil + ".");
     }
     lines.push(
