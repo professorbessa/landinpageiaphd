@@ -316,6 +316,13 @@ html[data-imersao-bar="on"] .header { top: var(--imersao-bar, 44px); }
   font-size: clamp(2.45rem, 5.6vw, 4.7rem);
 }
 
+.hero .display {
+  max-width: 22em;
+  font-size: clamp(1.65rem, 4.2vw, 2.05rem);
+  line-height: 1.2;
+  letter-spacing: -0.028em;
+}
+
 h2 {
   font-size: clamp(2rem, 4vw, 3.35rem);
   max-width: 16em;
@@ -1415,6 +1422,7 @@ details p {
   .brand-sig { display: block; }
   .hero { padding: 72px 0 96px; }
   .hero-art { display: block; }
+  .hero .display { max-width: min(46rem, calc(100% - 320px)); font-size: clamp(1.7rem, 2.35vw, 2.05rem); }
   .band { padding: 104px 0; }
   .belief {
     display: grid;
