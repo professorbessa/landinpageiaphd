@@ -18,7 +18,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/styles.css?v=convite">
+  <link rel="stylesheet" href="/styles.css?v=consulta">
 </head>
 <body class="core-page">
   <a class="skip" href="#conteudo">Ir para o conteúdo</a>
@@ -256,36 +256,28 @@
         <div class="corp">
           <p class="index">Pacotes corporativos — Imersão IA PhD</p>
           <h3>Profissionais da mesma empresa.</h3>
-          <p class="body body-intro">Valor individual: R$ 750. Para profissionais da mesma empresa, os pacotes são de 3, 5 ou 7. O valor por pessoa começa em R$ 580.</p>
+          <p class="body body-intro">Para profissionais da mesma empresa, os pacotes são de 3, 5 ou 7. A condição é sob consulta.</p>
           <div class="pack-table-wrap">
             <table class="pack-table">
               <caption class="sr-only">Pacotes corporativos da Imersão IA PhD</caption>
               <thead>
                 <tr>
                   <th scope="col">Pacote</th>
-                  <th scope="col">Por profissional</th>
-                  <th scope="col">Total</th>
-                  <th scope="col">Economia</th>
+                  <th scope="col">Condição</th>
                 </tr>
               </thead>
               <tbody>
                 <tr data-n="3">
                   <th scope="row">3 profissionais</th>
-                  <td>R$ 580</td>
-                  <td>R$ 1.740</td>
-                  <td>R$ 510</td>
+                  <td>Sob consulta</td>
                 </tr>
                 <tr data-n="5">
                   <th scope="row">5 profissionais</th>
-                  <td>R$ 540</td>
-                  <td>R$ 2.700</td>
-                  <td>R$ 1.050</td>
+                  <td>Sob consulta</td>
                 </tr>
                 <tr data-n="7">
                   <th scope="row">7 profissionais</th>
-                  <td>R$ 500</td>
-                  <td>R$ 3.500</td>
-                  <td>R$ 1.750</td>
+                  <td>Sob consulta</td>
                 </tr>
               </tbody>
             </table>
@@ -299,11 +291,7 @@
               <button type="button" data-pacote="5" aria-pressed="false">5</button>
               <button type="button" data-pacote="7" aria-pressed="false">7</button>
             </div>
-            <div class="sim-metrics">
-              <p><span>Investimento total</span><strong id="sim-total">R$ 1.740</strong></p>
-              <p><span>Economia total</span><strong id="sim-save">R$ 510</strong></p>
-            </div>
-            <p class="sim-line" id="sim-line">R$ 580 por profissional — desconto de 23%.</p>
+            <p class="sim-line" id="sim-line">Condição sob consulta para 3 profissionais da mesma empresa.</p>
             <a class="btn btn-solid offer-cta" id="sim-cta" href="#conversa">Quero este pacote</a>
           </div>
         </div>
@@ -516,27 +504,18 @@
         zones.forEach(function (el) { watcher.observe(el); });
       }
 
-      var packs = {
-        "3": { each: "R$ 580", total: "R$ 1.740", save: "R$ 510", off: "23%" },
-        "5": { each: "R$ 540", total: "R$ 2.700", save: "R$ 1.050", off: "28%" },
-        "7": { each: "R$ 500", total: "R$ 3.500", save: "R$ 1.750", off: "33%" }
-      };
+      var packs = { "3": true, "5": true, "7": true };
       var choices = document.querySelectorAll(".sim-choices [data-pacote]");
-      var total = document.getElementById("sim-total");
-      var save = document.getElementById("sim-save");
       var line = document.getElementById("sim-line");
       var rows = document.querySelectorAll(".pack-table tbody tr");
       var current = "3";
       function show(n) {
-        var pack = packs[n];
-        if (!pack) return;
+        if (!packs[n]) return;
         current = n;
         choices.forEach(function (btn) {
           btn.setAttribute("aria-pressed", btn.getAttribute("data-pacote") === n ? "true" : "false");
         });
-        total.textContent = pack.total;
-        save.textContent = pack.save;
-        line.textContent = pack.each + " por profissional — desconto de " + pack.off + ".";
+        line.textContent = "Condição sob consulta para " + n + " profissionais da mesma empresa.";
         rows.forEach(function (row) {
           row.classList.toggle("is-on", row.getAttribute("data-n") === n);
         });
@@ -546,10 +525,9 @@
       });
       var cta = document.getElementById("sim-cta");
       if (cta) cta.addEventListener("click", function () {
-        var pack = packs[current];
-        document.documentElement.dataset.pacote = current + " profissionais da mesma empresa. " + pack.each + " por profissional. Total: " + pack.total + ". Economia: " + pack.save + ".";
+        document.documentElement.dataset.pacote = current + " profissionais da mesma empresa. Condição sob consulta.";
         var lead = document.querySelector("#form-conversa .card-lead");
-        if (lead) lead.textContent = "Pacote para " + current + " profissionais da mesma empresa: " + pack.each + " por profissional, total de " + pack.total + ". Esta conversa confirma a proposta.";
+        if (lead) lead.textContent = "Pacote para " + current + " profissionais da mesma empresa. A condição é sob consulta. Esta conversa confirma a proposta.";
       });
       show("3");
     })();
